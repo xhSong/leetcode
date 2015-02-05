@@ -1,52 +1,67 @@
+struct LinkedListNode {
+    LinkedListNode(): pre(nullptr), next(nullptr) { }
+    int key, value;
+    LinkedListNode *pre, *next;
+};
+
 class LRUCache{
 public:
-    LRUCache(int capacity) {
-        keys = new int[capacity];
-        values = new int[capacity];
-        last = new int[capacity];
-        for (int i = 0; i < capacity; ++i) {
-            last[i] = -1;
-        }
-        this->capacity = capacity;
+    LRUCache(int capacity): capacity(capacity) {
+        head.next = &tail;
+        tail.pre = &head;
     }
-    
+
     ~LRUCache() {
-        delete keys;
-        delete values;
-        delete last;
+    	for (LinkedListNode *node = head.next; node != &tail; node = head.next) {
+    		head.next = node->next;
+    		delete node;
+    	}
     }
-    
+
     int get(int key) {
-        for (int i = 0; i < capacity; ++i) {
-            if (last[i] != -1 && keys[i] == key) {
-                last[i] = ++ counter;
-                return values[i];
-            }
+        if (hashtable.find(key) != hashtable.end()) {
+            LinkedListNode* node = hashtable[key];
+            erase(node), push(node);
+            return node->value;
         }
         return -1;
     }
     
     void set(int key, int value) {
-        for (int i = 0; i < capacity; ++i) {
-            if (last[i] != -1 && keys[i] == key) {
-                last[i] = ++ counter;
-                values[i] = value;
-                return ;
-            }
+        LinkedListNode* node;
+        if (hashtable.find(key) != hashtable.end()) {
+            node = hashtable[key];
+            node->key = key, node->value = value;
+            erase(node), push(node);
+            return ;
         }
-        int minid = 0;
-        for (int i = 0; i < capacity; ++i) {
-            if (last[minid] > last[i]) {
-                minid = i;
-            }
+        if (hashtable.size() == capacity) {
+            node = tail.pre;
+            erase(node);
+            hashtable.erase(node->key);
+        } else {
+            node = new LinkedListNode();
         }
-        last[minid] = ++counter;
-        keys[minid] = key;
-        values[minid] = value;
+        node->key = key, node->value = value;
+        hashtable[key] = node;
+        push(node);
     }
+    
 private:
-    int *keys, *values, *last, capacity;
-    static int counter;
+    
+    void push(LinkedListNode* node) {
+        node->pre = &head;
+        node->next = head.next;
+        head.next->pre = node;
+        head.next = node;
+    }
+    
+    void erase(LinkedListNode* node) {
+        node->pre->next = node->next;
+        node->next->pre = node->pre;
+    }
+    
+    LinkedListNode head, tail;
+    unordered_map<int, LinkedListNode*> hashtable;
+    int capacity;
 };
-
-int LRUCache::counter = 0;
