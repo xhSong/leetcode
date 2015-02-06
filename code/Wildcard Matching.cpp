@@ -18,10 +18,8 @@ public:
             }
         }
         
-        //如果不包含 * 就必须长度相等
         if (blk.size() == 1 && lenp != lens) return false;
         
-        // 开始一个字符串和最后一个字符串都要匹配
         tail = head + lens - strlen(blk[blk.size() - 1]);
         if (strStr(head, blk[0]) != head || strStr(tail, blk[blk.size() - 1]) != tail) {
             return false;
