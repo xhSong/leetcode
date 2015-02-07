@@ -1,5 +1,5 @@
 
-\documentclass[courier]{article}
+\documentclass{article}
 \usepackage{CJK}
 \usepackage[top=1in, bottom=1in, left=1.2in, right=1.2in]{geometry}
 \usepackage{multirow}
@@ -9,21 +9,21 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{color}
-\definecolor{gray}{rgb}{0.8,0.8,0.8}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
 \usepackage{listings}
 \lstset{numbers=left, 
 		basicstyle=\small\ttfamily,
 		language=C++, 
 		breaklines, 
 		extendedchars=false, 
-		keywordstyle=\color{blue}\ttfamily,
+		keywordstyle=\color{blue}\bfseries,
 		frame=none,
 		tabsize=4,
-		commentstyle=\color{red},
-		stringstyle=\emph\bfseries
+		commentstyle=\color{gray},
+		stringstyle=\emph\bfseries,
+		columns=flexible
 		}
-% \usepackage[palatino,gill,courier]{altfont}
-% \DefaultSFFont{sf}
 \begin{document}
 \begin{CJK*}{UTF8}{gkai}
 \CJKindent
@@ -32,10 +32,368 @@
 
 \maketitle
 
-\section{Solutions of leetcode algorithm problems}
 	
+\section{Problems Classify}
+
+\subsection*{ Sort }
+\label{ Sort }
+\hyperref[ Insert Interval ]{ Insert Interval },
+\hyperref[ Insertion Sort List ]{ Insertion Sort List },
+\hyperref[ Largest Number ]{ Largest Number },
+\hyperref[ Maximum Gap ]{ Maximum Gap },
+\hyperref[ Merge Intervals ]{ Merge Intervals },
+\hyperref[ Sort Colors ]{ Sort Colors },
+\hyperref[ Sort List ]{ Sort List }
+
+\subsection*{ Data Structure }
+\label{ Data Structure }
+\hyperref[ LRU Cache ]{ LRU Cache },
+\hyperref[ Min Stack ]{ Min Stack }
+
+\subsection*{ Dynamic Programming }
+\label{ Dynamic Programming }
+\hyperref[ Best Time to Buy and Sell Stock III ]{ Best Time to Buy and Sell Stock III },
+\hyperref[ Best Time to Buy and Sell Stock ]{ Best Time to Buy and Sell Stock },
+\hyperref[ Climbing Stairs ]{ Climbing Stairs },
+\hyperref[ Decode Ways ]{ Decode Ways },
+\hyperref[ Distinct Subsequences ]{ Distinct Subsequences },
+\hyperref[ Dungeon Game ]{ Dungeon Game },
+\hyperref[ Edit Distance ]{ Edit Distance },
+\hyperref[ Interleaving String ]{ Interleaving String },
+\hyperref[ Longest Valid Parentheses ]{ Longest Valid Parentheses },
+\hyperref[ Maximal Rectangle ]{ Maximal Rectangle },
+\hyperref[ Maximum Product Subarray ]{ Maximum Product Subarray },
+\hyperref[ Maximum Subarray ]{ Maximum Subarray },
+\hyperref[ Minimum Path Sum ]{ Minimum Path Sum },
+\hyperref[ Palindrome Partitioning II ]{ Palindrome Partitioning II },
+\hyperref[ Regular Expression Matching ]{ Regular Expression Matching },
+\hyperref[ Scramble String ]{ Scramble String },
+\hyperref[ Triangle ]{ Triangle },
+\hyperref[ Unique Binary Search Trees II ]{ Unique Binary Search Trees II },
+\hyperref[ Unique Binary Search Trees ]{ Unique Binary Search Trees },
+\hyperref[ Unique Paths II ]{ Unique Paths II },
+\hyperref[ Unique Paths ]{ Unique Paths },
+\hyperref[ Wildcard Matching ]{ Wildcard Matching },
+\hyperref[ Word Break II ]{ Word Break II },
+\hyperref[ Word Break ]{ Word Break }
+
+\subsection*{ Divide and Conquer }
+\label{ Divide and Conquer }
+\hyperref[ Majority Element ]{ Majority Element },
+\hyperref[ Maximum Subarray ]{ Maximum Subarray },
+\hyperref[ Median of Two Sorted Arrays ]{ Median of Two Sorted Arrays },
+\hyperref[ Merge k Sorted Lists ]{ Merge k Sorted Lists }
+
+\subsection*{ String }
+\label{ String }
+\hyperref[ Add Binary ]{ Add Binary },
+\hyperref[ Anagrams ]{ Anagrams },
+\hyperref[ Compare Version Numbers ]{ Compare Version Numbers },
+\hyperref[ Count and Say ]{ Count and Say },
+\hyperref[ Decode Ways ]{ Decode Ways },
+\hyperref[ Distinct Subsequences ]{ Distinct Subsequences },
+\hyperref[ Edit Distance ]{ Edit Distance },
+\hyperref[ Generate Parentheses ]{ Generate Parentheses },
+\hyperref[ Integer to Roman ]{ Integer to Roman },
+\hyperref[ Interleaving String ]{ Interleaving String },
+\hyperref[ Length of Last Word ]{ Length of Last Word },
+\hyperref[ Letter Combinations of a Phone Number ]{ Letter Combinations of a Phone Number },
+\hyperref[ Longest Common Prefix ]{ Longest Common Prefix },
+\hyperref[ Longest Palindromic Substring ]{ Longest Palindromic Substring },
+\hyperref[ Longest Substring Without Repeating Characters ]{ Longest Substring Without Repeating Characters },
+\hyperref[ Longest Valid Parentheses ]{ Longest Valid Parentheses },
+\hyperref[ Minimum Window Substring ]{ Minimum Window Substring },
+\hyperref[ Multiply Strings ]{ Multiply Strings },
+\hyperref[ Regular Expression Matching ]{ Regular Expression Matching },
+\hyperref[ Restore IP Addresses ]{ Restore IP Addresses },
+\hyperref[ Reverse Words in a String ]{ Reverse Words in a String },
+\hyperref[ Roman to Integer ]{ Roman to Integer },
+\hyperref[ Scramble String ]{ Scramble String },
+\hyperref[ Simplify Path ]{ Simplify Path },
+\hyperref[ Substring with Concatenation of All Words ]{ Substring with Concatenation of All Words },
+\hyperref[ Text Justification ]{ Text Justification },
+\hyperref[ Valid Number ]{ Valid Number },
+\hyperref[ Valid Palindrome ]{ Valid Palindrome },
+\hyperref[ Valid Parentheses ]{ Valid Parentheses },
+\hyperref[ Wildcard Matching ]{ Wildcard Matching },
+\hyperref[ Word Ladder II ]{ Word Ladder II },
+\hyperref[ ZigZag Conversion ]{ ZigZag Conversion }
+
+\subsection*{ Heap }
+\label{ Heap }
+\hyperref[ Merge k Sorted Lists ]{ Merge k Sorted Lists }
+
+\subsection*{ Two Pointers }
+\label{ Two Pointers }
+\hyperref[ 3Sum Closest ]{ 3Sum Closest },
+\hyperref[ 3Sum ]{ 3Sum },
+\hyperref[ 4Sum ]{ 4Sum },
+\hyperref[ Container With Most Water ]{ Container With Most Water },
+\hyperref[ Linked List Cycle II ]{ Linked List Cycle II },
+\hyperref[ Linked List Cycle ]{ Linked List Cycle },
+\hyperref[ Longest Substring Without Repeating Characters ]{ Longest Substring Without Repeating Characters },
+\hyperref[ Merge Sorted Array ]{ Merge Sorted Array },
+\hyperref[ Minimum Window Substring ]{ Minimum Window Substring },
+\hyperref[ Partition List ]{ Partition List },
+\hyperref[ Remove Duplicates from Sorted Array II ]{ Remove Duplicates from Sorted Array II },
+\hyperref[ Remove Duplicates from Sorted Array ]{ Remove Duplicates from Sorted Array },
+\hyperref[ Remove Element ]{ Remove Element },
+\hyperref[ Remove Nth Node From End of List ]{ Remove Nth Node From End of List },
+\hyperref[ Rotate List ]{ Rotate List },
+\hyperref[ Sort Colors ]{ Sort Colors },
+\hyperref[ Substring with Concatenation of All Words ]{ Substring with Concatenation of All Words },
+\hyperref[ Trapping Rain Water ]{ Trapping Rain Water },
+\hyperref[ Valid Palindrome ]{ Valid Palindrome }
+
+\subsection*{ Graph }
+\label{ Graph }
+\hyperref[ Clone Graph ]{ Clone Graph }
+
+\subsection*{ Tree }
+\label{ Tree }
+\hyperref[ Balanced Binary Tree ]{ Balanced Binary Tree },
+\hyperref[ Binary Search Tree Iterator ]{ Binary Search Tree Iterator },
+\hyperref[ Binary Tree Inorder Traversal ]{ Binary Tree Inorder Traversal },
+\hyperref[ Binary Tree Level Order Traversal II ]{ Binary Tree Level Order Traversal II },
+\hyperref[ Binary Tree Level Order Traversal ]{ Binary Tree Level Order Traversal },
+\hyperref[ Binary Tree Maximum Path Sum ]{ Binary Tree Maximum Path Sum },
+\hyperref[ Binary Tree Postorder Traversal ]{ Binary Tree Postorder Traversal },
+\hyperref[ Binary Tree Preorder Traversal ]{ Binary Tree Preorder Traversal },
+\hyperref[ Binary Tree Zigzag Level Order Traversal ]{ Binary Tree Zigzag Level Order Traversal },
+\hyperref[ Construct Binary Tree from Inorder and Postorder Traversal ]{ Construct Binary Tree from Inorder and Postorder Traversal },
+\hyperref[ Construct Binary Tree from Preorder and Inorder Traversal ]{ Construct Binary Tree from Preorder and Inorder Traversal },
+\hyperref[ Convert Sorted Array to Binary Search Tree ]{ Convert Sorted Array to Binary Search Tree },
+\hyperref[ Flatten Binary Tree to Linked List ]{ Flatten Binary Tree to Linked List },
+\hyperref[ Maximum Depth of Binary Tree ]{ Maximum Depth of Binary Tree },
+\hyperref[ Minimum Depth of Binary Tree ]{ Minimum Depth of Binary Tree },
+\hyperref[ Path Sum II ]{ Path Sum II },
+\hyperref[ Path Sum ]{ Path Sum },
+\hyperref[ Populating Next Right Pointers in Each Node II ]{ Populating Next Right Pointers in Each Node II },
+\hyperref[ Populating Next Right Pointers in Each Node ]{ Populating Next Right Pointers in Each Node },
+\hyperref[ Recover Binary Search Tree ]{ Recover Binary Search Tree },
+\hyperref[ Same Tree ]{ Same Tree },
+\hyperref[ Sum Root to Leaf Numbers ]{ Sum Root to Leaf Numbers },
+\hyperref[ Symmetric Tree ]{ Symmetric Tree },
+\hyperref[ Unique Binary Search Trees II ]{ Unique Binary Search Trees II },
+\hyperref[ Unique Binary Search Trees ]{ Unique Binary Search Trees },
+\hyperref[ Validate Binary Search Tree ]{ Validate Binary Search Tree }
+
+\subsection*{ Greedy }
+\label{ Greedy }
+\hyperref[ Best Time to Buy and Sell Stock II ]{ Best Time to Buy and Sell Stock II },
+\hyperref[ Candy ]{ Candy },
+\hyperref[ Gas Station ]{ Gas Station },
+\hyperref[ Jump Game II ]{ Jump Game II },
+\hyperref[ Jump Game ]{ Jump Game },
+\hyperref[ Wildcard Matching ]{ Wildcard Matching }
+
+\subsection*{ Bit Manipulation }
+\label{ Bit Manipulation }
+\hyperref[ Majority Element ]{ Majority Element },
+\hyperref[ Single Number II ]{ Single Number II },
+\hyperref[ Single Number ]{ Single Number },
+\hyperref[ Subsets ]{ Subsets }
+
+\subsection*{ Linked List }
+\label{ Linked List }
+\hyperref[ Add Two Numbers ]{ Add Two Numbers },
+\hyperref[ Convert Sorted List to Binary Search Tree ]{ Convert Sorted List to Binary Search Tree },
+\hyperref[ Copy List with Random Pointer ]{ Copy List with Random Pointer },
+\hyperref[ Insertion Sort List ]{ Insertion Sort List },
+\hyperref[ Intersection of Two Linked Lists ]{ Intersection of Two Linked Lists },
+\hyperref[ Linked List Cycle II ]{ Linked List Cycle II },
+\hyperref[ Linked List Cycle ]{ Linked List Cycle },
+\hyperref[ Merge k Sorted Lists ]{ Merge k Sorted Lists },
+\hyperref[ Merge Two Sorted Lists ]{ Merge Two Sorted Lists },
+\hyperref[ Partition List ]{ Partition List },
+\hyperref[ Remove Duplicates from Sorted List II ]{ Remove Duplicates from Sorted List II },
+\hyperref[ Remove Duplicates from Sorted List ]{ Remove Duplicates from Sorted List },
+\hyperref[ Remove Nth Node From End of List ]{ Remove Nth Node From End of List },
+\hyperref[ Reorder List ]{ Reorder List },
+\hyperref[ Reverse Linked List II ]{ Reverse Linked List II },
+\hyperref[ Reverse Nodes in k-Group ]{ Reverse Nodes in k-Group },
+\hyperref[ Rotate List ]{ Rotate List },
+\hyperref[ Sort List ]{ Sort List },
+\hyperref[ Swap Nodes in Pairs ]{ Swap Nodes in Pairs }
+
+\subsection*{ Backtracking }
+\label{ Backtracking }
+\hyperref[ Combination Sum II ]{ Combination Sum II },
+\hyperref[ Combination Sum ]{ Combination Sum },
+\hyperref[ Combinations ]{ Combinations },
+\hyperref[ Generate Parentheses ]{ Generate Parentheses },
+\hyperref[ Gray Code ]{ Gray Code },
+\hyperref[ Letter Combinations of a Phone Number ]{ Letter Combinations of a Phone Number },
+\hyperref[ N-Queens II ]{ N-Queens II },
+\hyperref[ N-Queens ]{ N-Queens },
+\hyperref[ Palindrome Partitioning ]{ Palindrome Partitioning },
+\hyperref[ Permutation Sequence ]{ Permutation Sequence },
+\hyperref[ Permutations II ]{ Permutations II },
+\hyperref[ Permutations ]{ Permutations },
+\hyperref[ Regular Expression Matching ]{ Regular Expression Matching },
+\hyperref[ Restore IP Addresses ]{ Restore IP Addresses },
+\hyperref[ Subsets II ]{ Subsets II },
+\hyperref[ Subsets ]{ Subsets },
+\hyperref[ Sudoku Solver ]{ Sudoku Solver },
+\hyperref[ Wildcard Matching ]{ Wildcard Matching },
+\hyperref[ Word Break II ]{ Word Break II },
+\hyperref[ Word Ladder II ]{ Word Ladder II },
+\hyperref[ Word Search ]{ Word Search }
+
+\subsection*{ Hash Table }
+\label{ Hash Table }
+\hyperref[ 4Sum ]{ 4Sum },
+\hyperref[ Anagrams ]{ Anagrams },
+\hyperref[ Binary Tree Inorder Traversal ]{ Binary Tree Inorder Traversal },
+\hyperref[ Copy List with Random Pointer ]{ Copy List with Random Pointer },
+\hyperref[ Fraction to Recurring Decimal ]{ Fraction to Recurring Decimal },
+\hyperref[ Longest Substring Without Repeating Characters ]{ Longest Substring Without Repeating Characters },
+\hyperref[ Max Points on a Line ]{ Max Points on a Line },
+\hyperref[ Maximal Rectangle ]{ Maximal Rectangle },
+\hyperref[ Minimum Window Substring ]{ Minimum Window Substring },
+\hyperref[ Single Number ]{ Single Number },
+\hyperref[ Substring with Concatenation of All Words ]{ Substring with Concatenation of All Words },
+\hyperref[ Sudoku Solver ]{ Sudoku Solver },
+\hyperref[ Two Sum ]{ Two Sum },
+\hyperref[ Valid Sudoku ]{ Valid Sudoku }
+
+\subsection*{ Binary Search }
+\label{ Binary Search }
+\hyperref[ Divide Two Integers ]{ Divide Two Integers },
+\hyperref[ Dungeon Game ]{ Dungeon Game },
+\hyperref[ Find Minimum in Rotated Sorted Array II ]{ Find Minimum in Rotated Sorted Array II },
+\hyperref[ Find Minimum in Rotated Sorted Array ]{ Find Minimum in Rotated Sorted Array },
+\hyperref[ Find Peak Element ]{ Find Peak Element },
+\hyperref[ Median of Two Sorted Arrays ]{ Median of Two Sorted Arrays },
+\hyperref[ Search a 2D Matrix ]{ Search a 2D Matrix },
+\hyperref[ Search for a Range ]{ Search for a Range },
+\hyperref[ Search in Rotated Sorted Array II ]{ Search in Rotated Sorted Array II },
+\hyperref[ Search in Rotated Sorted Array ]{ Search in Rotated Sorted Array },
+\hyperref[ Search Insert Position ]{ Search Insert Position }
+
+\subsection*{ Array }
+\label{ Array }
+\hyperref[ 3Sum Closest ]{ 3Sum Closest },
+\hyperref[ 3Sum ]{ 3Sum },
+\hyperref[ 4Sum ]{ 4Sum },
+\hyperref[ Best Time to Buy and Sell Stock II ]{ Best Time to Buy and Sell Stock II },
+\hyperref[ Best Time to Buy and Sell Stock III ]{ Best Time to Buy and Sell Stock III },
+\hyperref[ Best Time to Buy and Sell Stock ]{ Best Time to Buy and Sell Stock },
+\hyperref[ Combination Sum II ]{ Combination Sum II },
+\hyperref[ Combination Sum ]{ Combination Sum },
+\hyperref[ Construct Binary Tree from Inorder and Postorder Traversal ]{ Construct Binary Tree from Inorder and Postorder Traversal },
+\hyperref[ Construct Binary Tree from Preorder and Inorder Traversal ]{ Construct Binary Tree from Preorder and Inorder Traversal },
+\hyperref[ Container With Most Water ]{ Container With Most Water },
+\hyperref[ Find Minimum in Rotated Sorted Array II ]{ Find Minimum in Rotated Sorted Array II },
+\hyperref[ Find Minimum in Rotated Sorted Array ]{ Find Minimum in Rotated Sorted Array },
+\hyperref[ Find Peak Element ]{ Find Peak Element },
+\hyperref[ First Missing Positive ]{ First Missing Positive },
+\hyperref[ Insert Interval ]{ Insert Interval },
+\hyperref[ Jump Game II ]{ Jump Game II },
+\hyperref[ Jump Game ]{ Jump Game },
+\hyperref[ Largest Rectangle in Histogram ]{ Largest Rectangle in Histogram },
+\hyperref[ Longest Consecutive Sequence ]{ Longest Consecutive Sequence },
+\hyperref[ Majority Element ]{ Majority Element },
+\hyperref[ Maximal Rectangle ]{ Maximal Rectangle },
+\hyperref[ Maximum Product Subarray ]{ Maximum Product Subarray },
+\hyperref[ Maximum Subarray ]{ Maximum Subarray },
+\hyperref[ Median of Two Sorted Arrays ]{ Median of Two Sorted Arrays },
+\hyperref[ Merge Intervals ]{ Merge Intervals },
+\hyperref[ Merge Sorted Array ]{ Merge Sorted Array },
+\hyperref[ Minimum Path Sum ]{ Minimum Path Sum },
+\hyperref[ Next Permutation ]{ Next Permutation },
+\hyperref[ Plus One ]{ Plus One },
+\hyperref[ Remove Duplicates from Sorted Array II ]{ Remove Duplicates from Sorted Array II },
+\hyperref[ Remove Duplicates from Sorted Array ]{ Remove Duplicates from Sorted Array },
+\hyperref[ Remove Element ]{ Remove Element },
+\hyperref[ Search a 2D Matrix ]{ Search a 2D Matrix },
+\hyperref[ Search for a Range ]{ Search for a Range },
+\hyperref[ Search in Rotated Sorted Array II ]{ Search in Rotated Sorted Array II },
+\hyperref[ Search in Rotated Sorted Array ]{ Search in Rotated Sorted Array },
+\hyperref[ Search Insert Position ]{ Search Insert Position },
+\hyperref[ Set Matrix Zeroes ]{ Set Matrix Zeroes },
+\hyperref[ Sort Colors ]{ Sort Colors },
+\hyperref[ Spiral Matrix II ]{ Spiral Matrix II },
+\hyperref[ Spiral Matrix ]{ Spiral Matrix },
+\hyperref[ Subsets II ]{ Subsets II },
+\hyperref[ Subsets ]{ Subsets },
+\hyperref[ Trapping Rain Water ]{ Trapping Rain Water },
+\hyperref[ Triangle ]{ Triangle },
+\hyperref[ Two Sum ]{ Two Sum },
+\hyperref[ Unique Paths II ]{ Unique Paths II },
+\hyperref[ Unique Paths ]{ Unique Paths },
+\hyperref[ Word Ladder II ]{ Word Ladder II },
+\hyperref[ Word Search ]{ Word Search }
+
+\subsection*{ Depth-first Search }
+\label{ Depth-first Search }
+\hyperref[ Balanced Binary Tree ]{ Balanced Binary Tree },
+\hyperref[ Binary Tree Maximum Path Sum ]{ Binary Tree Maximum Path Sum },
+\hyperref[ Clone Graph ]{ Clone Graph },
+\hyperref[ Construct Binary Tree from Inorder and Postorder Traversal ]{ Construct Binary Tree from Inorder and Postorder Traversal },
+\hyperref[ Construct Binary Tree from Preorder and Inorder Traversal ]{ Construct Binary Tree from Preorder and Inorder Traversal },
+\hyperref[ Convert Sorted Array to Binary Search Tree ]{ Convert Sorted Array to Binary Search Tree },
+\hyperref[ Convert Sorted List to Binary Search Tree ]{ Convert Sorted List to Binary Search Tree },
+\hyperref[ Flatten Binary Tree to Linked List ]{ Flatten Binary Tree to Linked List },
+\hyperref[ Maximum Depth of Binary Tree ]{ Maximum Depth of Binary Tree },
+\hyperref[ Minimum Depth of Binary Tree ]{ Minimum Depth of Binary Tree },
+\hyperref[ Path Sum II ]{ Path Sum II },
+\hyperref[ Path Sum ]{ Path Sum },
+\hyperref[ Populating Next Right Pointers in Each Node II ]{ Populating Next Right Pointers in Each Node II },
+\hyperref[ Populating Next Right Pointers in Each Node ]{ Populating Next Right Pointers in Each Node },
+\hyperref[ Recover Binary Search Tree ]{ Recover Binary Search Tree },
+\hyperref[ Same Tree ]{ Same Tree },
+\hyperref[ Sum Root to Leaf Numbers ]{ Sum Root to Leaf Numbers },
+\hyperref[ Symmetric Tree ]{ Symmetric Tree },
+\hyperref[ Validate Binary Search Tree ]{ Validate Binary Search Tree }
+
+\subsection*{ Stack }
+\label{ Stack }
+\hyperref[ Binary Search Tree Iterator ]{ Binary Search Tree Iterator },
+\hyperref[ Binary Tree Inorder Traversal ]{ Binary Tree Inorder Traversal },
+\hyperref[ Binary Tree Postorder Traversal ]{ Binary Tree Postorder Traversal },
+\hyperref[ Binary Tree Preorder Traversal ]{ Binary Tree Preorder Traversal },
+\hyperref[ Binary Tree Zigzag Level Order Traversal ]{ Binary Tree Zigzag Level Order Traversal },
+\hyperref[ Evaluate Reverse Polish Notation ]{ Evaluate Reverse Polish Notation },
+\hyperref[ Largest Rectangle in Histogram ]{ Largest Rectangle in Histogram },
+\hyperref[ Maximal Rectangle ]{ Maximal Rectangle },
+\hyperref[ Min Stack ]{ Min Stack },
+\hyperref[ Simplify Path ]{ Simplify Path },
+\hyperref[ Trapping Rain Water ]{ Trapping Rain Water },
+\hyperref[ Valid Parentheses ]{ Valid Parentheses }
+
+\subsection*{ Math }
+\label{ Math }
+\hyperref[ Add Binary ]{ Add Binary },
+\hyperref[ Add Two Numbers ]{ Add Two Numbers },
+\hyperref[ Divide Two Integers ]{ Divide Two Integers },
+\hyperref[ Excel Sheet Column Number ]{ Excel Sheet Column Number },
+\hyperref[ Excel Sheet Column Title ]{ Excel Sheet Column Title },
+\hyperref[ Factorial Trailing Zeroes ]{ Factorial Trailing Zeroes },
+\hyperref[ Fraction to Recurring Decimal ]{ Fraction to Recurring Decimal },
+\hyperref[ Integer to Roman ]{ Integer to Roman },
+\hyperref[ Max Points on a Line ]{ Max Points on a Line },
+\hyperref[ Multiply Strings ]{ Multiply Strings },
+\hyperref[ Palindrome Number ]{ Palindrome Number },
+\hyperref[ Permutation Sequence ]{ Permutation Sequence },
+\hyperref[ Plus One ]{ Plus One },
+\hyperref[ Reverse Integer ]{ Reverse Integer },
+\hyperref[ Roman to Integer ]{ Roman to Integer },
+\hyperref[ Valid Number ]{ Valid Number }
+
+\subsection*{ Breadth-first Search }
+\label{ Breadth-first Search }
+\hyperref[ Binary Tree Level Order Traversal II ]{ Binary Tree Level Order Traversal II },
+\hyperref[ Binary Tree Level Order Traversal ]{ Binary Tree Level Order Traversal },
+\hyperref[ Binary Tree Zigzag Level Order Traversal ]{ Binary Tree Zigzag Level Order Traversal },
+\hyperref[ Clone Graph ]{ Clone Graph },
+\hyperref[ Surrounded Regions ]{ Surrounded Regions },
+\hyperref[ Word Ladder II ]{ Word Ladder II },
+\hyperref[ Word Ladder ]{ Word Ladder }
+\section{Solutions of leetcode algorithm problems}
 
 \subsection{ 3Sum Closest }
+\label{ 3Sum Closest }
 
 \subsubsection*{Problem Description}
 Given an array \emph{S} of \emph{n} integers, find three integers in \emph{S} such that the sum is closest to a given number, target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
@@ -46,6 +404,11 @@ Given an array \emph{S} of \emph{n} integers, find three integers in \emph{S} su
     The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/3sum-closest/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -82,6 +445,7 @@ public:
 
 
 \subsection{ 3Sum }
+\label{ 3Sum }
 
 \subsubsection*{Problem Description}
 Given an array \emph{S} of \emph{n} integers, are there elements \emph{a}, \emph{b}, \emph{c} in \emph{S} such that \emph{a} + \emph{b} + \emph{c} = 0? Find all unique triplets in the array which gives the sum of zero.
@@ -102,6 +466,11 @@ Given an array \emph{S} of \emph{n} integers, are there elements \emph{a}, \emph
     (-1, -1, 2)
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/3sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -141,6 +510,7 @@ public:
 
 
 \subsection{ 4Sum }
+\label{ 4Sum }
 
 \subsubsection*{Problem Description}
 Given an array \emph{S} of \emph{n} integers, are there elements \emph{a}, \emph{b}, \emph{c}, and \emph{d} in \emph{S} such that \emph{a} + \emph{b} + \emph{c} + \emph{d} = target? Find all unique quadruplets in the array which gives the sum of target.
@@ -162,6 +532,11 @@ Given an array \emph{S} of \emph{n} integers, are there elements \emph{a}, \emph
     (-2,  0, 0, 2)
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/4sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -224,6 +599,7 @@ private:
 
 
 \subsection{ Add Binary }
+\label{ Add Binary }
 
 \subsubsection*{Problem Description}
 Given two binary strings, return their sum (also a binary string).
@@ -240,6 +616,11 @@ b = \textbf{"1"}
 Return \textbf{"100"}.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/add-binary/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -271,11 +652,17 @@ public:
 
 
 \subsection{ Add Two Numbers }
+\label{ Add Two Numbers }
 
 \subsubsection*{Problem Description}
 You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/add-two-numbers/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -320,6 +707,7 @@ public:
 
 
 \subsection{ Anagrams }
+\label{ Anagrams }
 
 \subsubsection*{Problem Description}
 Given an array of strings, return all groups of strings that are anagrams.
@@ -327,6 +715,11 @@ Given an array of strings, return all groups of strings that are anagrams.
 Note: All inputs will be in lower-case.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/anagrams/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -362,6 +755,7 @@ public:
 
 
 \subsection{ Balanced Binary Tree }
+\label{ Balanced Binary Tree }
 
 \subsubsection*{Problem Description}
 Given a binary tree, determine if it is height-balanced.
@@ -369,6 +763,11 @@ Given a binary tree, determine if it is height-balanced.
 For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of \emph{every} node never differ by more than 1.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/balanced-binary-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -408,6 +807,7 @@ private:
 
 
 \subsection{ Best Time to Buy and Sell Stock II }
+\label{ Best Time to Buy and Sell Stock II }
 
 \subsubsection*{Problem Description}
 Say you have an array for which the \emph{i}th element is the price of a given stock on day \emph{i}.
@@ -415,6 +815,11 @@ Say you have an array for which the \emph{i}th element is the price of a given s
 Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Greedy ]{ Greedy }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -438,6 +843,7 @@ public:
 
 
 \subsection{ Best Time to Buy and Sell Stock III }
+\label{ Best Time to Buy and Sell Stock III }
 
 \subsubsection*{Problem Description}
 Say you have an array for which the \emph{i}th element is the price of a given stock on day \emph{i}.
@@ -450,6 +856,11 @@ Design an algorithm to find the maximum profit. You may complete at most \emph{t
 You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -478,6 +889,7 @@ public:
 
 
 \subsection{ Best Time to Buy and Sell Stock }
+\label{ Best Time to Buy and Sell Stock }
 
 \subsubsection*{Problem Description}
 Say you have an array for which the \emph{i}th element is the price of a given stock on day \emph{i}.
@@ -485,6 +897,11 @@ Say you have an array for which the \emph{i}th element is the price of a given s
 If you were only permitted to complete at most one transaction (ie, buy one and sell one share of the stock), design an algorithm to find the maximum profit.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -507,6 +924,7 @@ public:
 
 
 \subsection{ Binary Search Tree Iterator }
+\label{ Binary Search Tree Iterator }
 
 \subsubsection*{Problem Description}
 Implement an iterator over a binary search tree (BST). Your iterator will be initialized with the root node of a BST.
@@ -520,6 +938,11 @@ Calling \textbf{next()} will return the next smallest number in the BST.
 Special thanks to @ts for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-search-tree-iterator/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -573,6 +996,7 @@ private:
 
 
 \subsection{ Binary Tree Inorder Traversal }
+\label{ Binary Tree Inorder Traversal }
 
 \subsubsection*{Problem Description}
 Given a binary tree, return the \emph{inorder} traversal of its nodes' values.
@@ -612,6 +1036,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-inorder-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -646,6 +1075,7 @@ private:
 
 
 \subsection{ Binary Tree Level Order Traversal II }
+\label{ Binary Tree Level Order Traversal II }
 
 \subsubsection*{Problem Description}
 Given a binary tree, return the \emph{bottom-up level order} traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
@@ -692,6 +1122,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Breadth-first Search ]{ Breadth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-level-order-traversal-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -739,6 +1174,7 @@ public:
 
 
 \subsection{ Binary Tree Level Order Traversal }
+\label{ Binary Tree Level Order Traversal }
 
 \subsubsection*{Problem Description}
 Given a binary tree, return the \emph{level order} traversal of its nodes' values. (ie, from left to right, level by level).
@@ -785,6 +1221,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Breadth-first Search ]{ Breadth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-level-order-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -832,6 +1273,7 @@ public:
 
 
 \subsection{ Binary Tree Maximum Path Sum }
+\label{ Binary Tree Maximum Path Sum }
 
 \subsubsection*{Problem Description}
 Given a binary tree, find the maximum path sum.
@@ -851,6 +1293,11 @@ Given the below binary tree,
 Return \textbf{6}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-maximum-path-sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -887,6 +1334,7 @@ private:
 
 
 \subsection{ Binary Tree Postorder Traversal }
+\label{ Binary Tree Postorder Traversal }
 
 \subsubsection*{Problem Description}
 Given a binary tree, return the \emph{postorder} traversal of its nodes' values.
@@ -910,6 +1358,11 @@ return \textbf{[3,2,1]}.
 \textbf{Note:} Recursive solution is trivial, could you do it iteratively?
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-postorder-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -944,6 +1397,7 @@ private:
 
 
 \subsection{ Binary Tree Preorder Traversal }
+\label{ Binary Tree Preorder Traversal }
 
 \subsubsection*{Problem Description}
 Given a binary tree, return the \emph{preorder} traversal of its nodes' values.
@@ -967,6 +1421,11 @@ return \textbf{[1,2,3]}.
 \textbf{Note:} Recursive solution is trivial, could you do it iteratively?
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-preorder-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1001,6 +1460,7 @@ private:
 
 
 \subsection{ Binary Tree Zigzag Level Order Traversal }
+\label{ Binary Tree Zigzag Level Order Traversal }
 
 \subsubsection*{Problem Description}
 Given a binary tree, return the \emph{zigzag level order} traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
@@ -1047,6 +1507,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Breadth-first Search ]{ Breadth-first Search },  \hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/binary-tree-zigzag-level-order-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1100,6 +1565,7 @@ public:
 
 
 \subsection{ Candy }
+\label{ Candy }
 
 \subsubsection*{Problem Description}
 There are \emph{N} children standing in a line. Each child is assigned a rating value.
@@ -1109,6 +1575,11 @@ You are giving candies to these children subjected to the following requirements
 What is the minimum candies you must give?
 
 
+\textbf{Tags: }
+\hyperref[ Greedy ]{ Greedy }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/candy/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1140,6 +1611,7 @@ public:
 
 
 \subsection{ Climbing Stairs }
+\label{ Climbing Stairs }
 
 \subsubsection*{Problem Description}
 You are climbing a stair case. It takes \emph{n} steps to reach to the top.
@@ -1147,6 +1619,11 @@ You are climbing a stair case. It takes \emph{n} steps to reach to the top.
 Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/climbing-stairs/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1168,6 +1645,7 @@ public:
 
 
 \subsection{ Clone Graph }
+\label{ Clone Graph }
 
 \subsubsection*{Problem Description}
 Clone an undirected graph. Each node in the graph contains a \textbf{label} and a list of its \textbf{neighbors}.
@@ -1198,6 +1676,11 @@ Visually, the graph looks like the following:
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Depth-first Search ]{ Depth-first Search },  \hyperref[ Breadth-first Search ]{ Breadth-first Search },  \hyperref[ Graph ]{ Graph }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/clone-graph/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1237,6 +1720,7 @@ private:
 
 
 \subsection{ Combination Sum II }
+\label{ Combination Sum II }
 
 \subsubsection*{Problem Description}
 Given a collection of candidate numbers (\textbf{\emph{C}}) and a target number (\textbf{\emph{T}}), find all unique combinations in \textbf{\emph{C}} where the candidate numbers sums to \textbf{\emph{T}}.
@@ -1270,6 +1754,11 @@ A solution set is:
 \textbf{[1, 1, 6]}
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/combination-sum-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1316,6 +1805,7 @@ private:
 
 
 \subsection{ Combination Sum }
+\label{ Combination Sum }
 
 \subsubsection*{Problem Description}
 Given a set of candidate numbers (\textbf{\emph{C}}) and a target number (\textbf{\emph{T}}), find all unique combinations in \textbf{\emph{C}} where the candidate numbers sums to \textbf{\emph{T}}.
@@ -1343,6 +1833,11 @@ A solution set is:
 \textbf{[2, 2, 3]}
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/combination-sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1393,6 +1888,7 @@ private:
 
 
 \subsection{ Combinations }
+\label{ Combinations }
 
 \subsubsection*{Problem Description}
 Given two integers \emph{n} and \emph{k}, return all possible combinations of \emph{k} numbers out of 1 ... \emph{n}.
@@ -1413,6 +1909,11 @@ If \emph{n} = 4 and \emph{k} = 2, a solution is:
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/combinations/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1446,6 +1947,7 @@ private:
 
 
 \subsection{ Compare Version Numbers }
+\label{ Compare Version Numbers }
 
 \subsubsection*{Problem Description}
 Compare two version numbers \emph{version1} and \emph{version1}.
@@ -1471,6 +1973,11 @@ Special thanks to @ts for adding this problem and creating all test cases.
 0.1 < 1.1 < 1.2 < 13.37
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/compare-version-numbers/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1510,6 +2017,7 @@ private:
 
 
 \subsection{ Construct Binary Tree from Inorder and Postorder Traversal }
+\label{ Construct Binary Tree from Inorder and Postorder Traversal }
 
 \subsubsection*{Problem Description}
 Given inorder and postorder traversal of a tree, construct the binary tree.
@@ -1520,6 +2028,11 @@ Given inorder and postorder traversal of a tree, construct the binary tree.
 You may assume that duplicates do not exist in the tree.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Array ]{ Array },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1565,6 +2078,7 @@ private:
 
 
 \subsection{ Construct Binary Tree from Preorder and Inorder Traversal }
+\label{ Construct Binary Tree from Preorder and Inorder Traversal }
 
 \subsubsection*{Problem Description}
 Given preorder and inorder traversal of a tree, construct the binary tree.
@@ -1575,6 +2089,11 @@ Given preorder and inorder traversal of a tree, construct the binary tree.
 You may assume that duplicates do not exist in the tree.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Array ]{ Array },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1620,6 +2139,7 @@ private:
 
 
 \subsection{ Container With Most Water }
+\label{ Container With Most Water }
 
 \subsubsection*{Problem Description}
 Given \emph{n} non-negative integers \emph{a1}, \emph{a2}, ..., \emph{an}, where each represents a point at coordinate (\emph{i}, \emph{ai}). \emph{n} vertical lines are drawn such that the two endpoints of line \emph{i} is at (\emph{i}, \emph{ai}) and (\emph{i}, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
@@ -1627,6 +2147,11 @@ Given \emph{n} non-negative integers \emph{a1}, \emph{a2}, ..., \emph{an}, where
 Note: You may not slant the container.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/container-with-most-water/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1665,11 +2190,17 @@ public:
 
 
 \subsection{ Convert Sorted Array to Binary Search Tree }
+\label{ Convert Sorted Array to Binary Search Tree }
 
 \subsubsection*{Problem Description}
 Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/convert-sorted-array-to-binary-search-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1707,11 +2238,17 @@ private:
 
 
 \subsection{ Convert Sorted List to Binary Search Tree }
+\label{ Convert Sorted List to Binary Search Tree }
 
 \subsubsection*{Problem Description}
 Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
 
+\textbf{Tags: }
+\hyperref[ Depth-first Search ]{ Depth-first Search },  \hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/convert-sorted-list-to-binary-search-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1760,6 +2297,7 @@ private:
 
 
 \subsection{ Copy List with Random Pointer }
+\label{ Copy List with Random Pointer }
 
 \subsubsection*{Problem Description}
 A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
@@ -1767,6 +2305,11 @@ A linked list is given such that each node contains an additional random pointer
 Return a deep copy of the list.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/copy-list-with-random-pointer/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1803,6 +2346,7 @@ public:
 
 
 \subsection{ Count and Say }
+\label{ Count and Say }
 
 \subsubsection*{Problem Description}
 The count-and-say sequence is the sequence of integers beginning as follows:
@@ -1823,6 +2367,11 @@ Given an integer \emph{n}, generate the \emph{n}th sequence.
 Note: The sequence of integers will be represented as a string.
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/count-and-say/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1869,6 +2418,7 @@ private:
 
 
 \subsection{ Decode Ways }
+\label{ Decode Ways }
 
 \subsubsection*{Problem Description}
 A message containing letters from \textbf{A-Z} is being encoded to numbers using the following mapping:
@@ -1890,6 +2440,11 @@ The number of ways decoding \textbf{"12"} is 2.
 'Z' -> 26
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/decode-ways/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1920,6 +2475,7 @@ public:
 
 
 \subsection{ Distinct Subsequences }
+\label{ Distinct Subsequences }
 
 \subsubsection*{Problem Description}
 Given a string \textbf{S} and a string \textbf{T}, count the number of distinct subsequences of \textbf{T} in \textbf{S}.
@@ -1934,6 +2490,11 @@ Here is an example:
 Return \textbf{3}.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/distinct-subsequences/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -1962,6 +2523,7 @@ public:
 
 
 \subsection{ Divide Two Integers }
+\label{ Divide Two Integers }
 
 \subsubsection*{Problem Description}
 Divide two integers without using multiplication, division and mod operator.
@@ -1969,6 +2531,11 @@ Divide two integers without using multiplication, division and mod operator.
 If it is overflow, return MAX\_INT.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/divide-two-integers/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2012,6 +2579,7 @@ private:
 
 
 \subsection{ Dungeon Game }
+\label{ Dungeon Game }
 
 \subsubsection*{Problem Description}
 The demons had captured the princess (\textbf{P}) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (\textbf{K}) was initially positioned in the top-left room and must fight his way through the dungeon to rescue the princess.
@@ -2038,6 +2606,11 @@ For example, given the dungeon below, the initial health of the knight must be a
 Special thanks to @stellari for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/dungeon-game/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2063,6 +2636,7 @@ public:
 
 
 \subsection{ Edit Distance }
+\label{ Edit Distance }
 
 \subsubsection*{Problem Description}
 Given two words \emph{word1} and \emph{word2}, find the minimum number of steps required to convert \emph{word1} to \emph{word2}. (each operation is counted as 1 step.)
@@ -2078,6 +2652,11 @@ b) Delete a character
 c) Replace a character
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/edit-distance/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2114,6 +2693,7 @@ public:
 
 
 \subsection{ Evaluate Reverse Polish Notation }
+\label{ Evaluate Reverse Polish Notation }
 
 \subsubsection*{Problem Description}
 Evaluate the value of an arithmetic expression in Reverse Polish Notation.
@@ -2127,6 +2707,11 @@ Some examples:
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/evaluate-reverse-polish-notation/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2169,6 +2754,7 @@ private:
 
 
 \subsection{ Excel Sheet Column Number }
+\label{ Excel Sheet Column Number }
 
 \subsubsection*{Problem Description}
 Related to question Excel Sheet Column Title
@@ -2191,6 +2777,11 @@ Special thanks to @ts for adding this problem and creating all test cases.
     AB -> 28 
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/excel-sheet-column-number/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2211,6 +2802,7 @@ public:
 
 
 \subsection{ Excel Sheet Column Title }
+\label{ Excel Sheet Column Title }
 
 \subsubsection*{Problem Description}
 Given a positive integer, return its corresponding column title as appear in an Excel sheet.
@@ -2231,6 +2823,11 @@ Special thanks to @ifanchu for adding this problem and creating all test cases.
     28 -> AB 
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/excel-sheet-column-title/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2252,6 +2849,7 @@ public:
 
 
 \subsection{ Factorial Trailing Zeroes }
+\label{ Factorial Trailing Zeroes }
 
 \subsubsection*{Problem Description}
 Given an integer \emph{n}, return the number of trailing zeroes in \emph{n}!.
@@ -2263,6 +2861,11 @@ Given an integer \emph{n}, return the number of trailing zeroes in \emph{n}!.
 Special thanks to @ts for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/factorial-trailing-zeroes/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2284,6 +2887,7 @@ public:
 
 
 \subsection{ Find Minimum in Rotated Sorted Array II }
+\label{ Find Minimum in Rotated Sorted Array II }
 
 \subsubsection*{Problem Description}
 \emph{Follow up} for "Find Minimum in Rotated Sorted Array":
@@ -2302,6 +2906,11 @@ Find the minimum element.
 The array may contain duplicates.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2327,6 +2936,7 @@ private:
 
 
 \subsection{ Find Minimum in Rotated Sorted Array }
+\label{ Find Minimum in Rotated Sorted Array }
 
 \subsubsection*{Problem Description}
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
@@ -2338,6 +2948,11 @@ Find the minimum element.
 You may assume no duplicate exists in the array.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/find-minimum-in-rotated-sorted-array/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2364,6 +2979,7 @@ public:
 
 
 \subsection{ Find Peak Element }
+\label{ Find Peak Element }
 
 \subsubsection*{Problem Description}
 A peak element is an element that is greater than its neighbors.
@@ -2383,6 +2999,11 @@ Your solution should be in logarithmic complexity.
 Special thanks to @ts for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/find-peak-element/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2412,6 +3033,7 @@ public:
 
 
 \subsection{ First Missing Positive }
+\label{ First Missing Positive }
 
 \subsubsection*{Problem Description}
 Given an unsorted integer array, find the first missing positive integer.
@@ -2427,6 +3049,11 @@ and \textbf{[3,4,-1,1]} return \textbf{2}.
 Your algorithm should run in \emph{O}(\emph{n}) time and uses constant space.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/first-missing-positive/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2458,6 +3085,7 @@ private:
 
 
 \subsection{ Flatten Binary Tree to Linked List }
+\label{ Flatten Binary Tree to Linked List }
 
 \subsubsection*{Problem Description}
 Given a binary tree, flatten it to a linked list in-place.
@@ -2490,6 +3118,11 @@ If you notice carefully in the flattened tree, each node's right child points to
              6
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/flatten-binary-tree-to-linked-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2538,6 +3171,7 @@ private:
 
 
 \subsection{ Fraction to Recurring Decimal }
+\label{ Fraction to Recurring Decimal }
 
 \subsubsection*{Problem Description}
 Given two integers representing the numerator and denominator of a fraction, return the fraction in string format.
@@ -2556,6 +3190,11 @@ For example,
 Special thanks to @Shangrila for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/fraction-to-recurring-decimal/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2605,6 +3244,7 @@ private:
 
 
 \subsection{ Gas Station }
+\label{ Gas Station }
 
 \subsubsection*{Problem Description}
 There are \emph{N} gas stations along a circular route, where the amount of gas at station \emph{i} is \textbf{gas[i]}.
@@ -2617,6 +3257,11 @@ Return the starting gas station's index if you can travel around the circuit onc
 The solution is guaranteed to be unique.
 
 
+\textbf{Tags: }
+\hyperref[ Greedy ]{ Greedy }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/gas-station/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2655,6 +3300,7 @@ public:
 
 
 \subsection{ Generate Parentheses }
+\label{ Generate Parentheses }
 
 \subsubsection*{Problem Description}
 Given \emph{n} pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -2664,6 +3310,11 @@ For example, given \emph{n} = 3, a solution set is:
 \textbf{"((()))", "(()())", "(())()", "()(())", "()()()"}
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/generate-parentheses/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2696,6 +3347,7 @@ public:
 
 
 \subsection{ Gray Code }
+\label{ Gray Code }
 
 \subsubsection*{Problem Description}
 The gray code is a binary numeral system where two successive values differ in only one bit.
@@ -2720,6 +3372,11 @@ For now, the judge is able to judge based on one instance of gray code sequence.
 10 - 2
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/gray-code/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2753,9 +3410,14 @@ public:
 
 
 \subsection{ Implement strStr() }
+\label{ Implement strStr() }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/implement-strstr()/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2791,6 +3453,7 @@ public:
 
 
 \subsection{ Insert Interval }
+\label{ Insert Interval }
 
 \subsubsection*{Problem Description}
 Given a set of \emph{non-overlapping} intervals, insert a new interval into the intervals (merge if necessary).
@@ -2810,6 +3473,11 @@ Given \textbf{[1,2],[3,5],[6,7],[8,10],[12,16]}, insert and merge \textbf{[4,9]}
 This is because the new interval \textbf{[4,9]} overlaps with \textbf{[3,5],[6,7],[8,10]}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/insert-interval/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2852,11 +3520,17 @@ public:
 
 
 \subsection{ Insertion Sort List }
+\label{ Insertion Sort List }
 
 \subsubsection*{Problem Description}
 Sort a linked list using insertion sort.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/insertion-sort-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2906,6 +3580,7 @@ private:
 
 
 \subsection{ Integer to Roman }
+\label{ Integer to Roman }
 
 \subsubsection*{Problem Description}
 Given an integer, convert it to a roman numeral.
@@ -2913,6 +3588,11 @@ Given an integer, convert it to a roman numeral.
 Input is guaranteed to be within the range from 1 to 3999.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/integer-to-roman/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -2967,6 +3647,7 @@ private:
 
 
 \subsection{ Interleaving String }
+\label{ Interleaving String }
 
 \subsubsection*{Problem Description}
 Given \emph{s1}, \emph{s2}, \emph{s3}, find whether \emph{s3} is formed by the interleaving of \emph{s1} and \emph{s2}.
@@ -2988,6 +3669,11 @@ When \emph{s3} = \textbf{"aadbbcbcac"}, return true.
 When \emph{s3} = \textbf{"aadbbbaccc"}, return false.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/interleaving-string/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3019,6 +3705,7 @@ public:
 
 
 \subsection{ Intersection of Two Linked Lists }
+\label{ Intersection of Two Linked Lists }
 
 \subsubsection*{Problem Description}
 Write a program to find the node at which the intersection of two singly linked lists begins.
@@ -3047,6 +3734,11 @@ A:          a1 → a2
 B:     b1 → b2 → b3
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/intersection-of-two-linked-lists/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3092,6 +3784,7 @@ private:
 
 
 \subsection{ Jump Game II }
+\label{ Jump Game II }
 
 \subsubsection*{Problem Description}
 Given an array of non-negative integers, you are initially positioned at the first index of the array.
@@ -3108,6 +3801,11 @@ Given array A = \textbf{[2,3,1,1,4]}
 The minimum number of jumps to reach the last index is \textbf{2}. (Jump \textbf{1} step from index 0 to 1, then \textbf{3} steps to the last index.)
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Greedy ]{ Greedy }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/jump-game-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3144,6 +3842,7 @@ private:
 
 
 \subsection{ Jump Game }
+\label{ Jump Game }
 
 \subsubsection*{Problem Description}
 Given an array of non-negative integers, you are initially positioned at the first index of the array.
@@ -3160,6 +3859,11 @@ A = \textbf{[2,3,1,1,4]}, return \textbf{true}.
 A = \textbf{[3,2,1,0,4]}, return \textbf{false}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Greedy ]{ Greedy }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/jump-game/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3182,6 +3886,7 @@ public:
 
 
 \subsection{ Largest Number }
+\label{ Largest Number }
 
 \subsubsection*{Problem Description}
 Given a list of non negative integers, arrange them such that they form the largest number.
@@ -3195,6 +3900,11 @@ Note: The result may be very large, so you need to return a string instead of an
 Special thanks to @ts for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/largest-number/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3227,6 +3937,7 @@ public:
 
 
 \subsection{ Largest Rectangle in Histogram }
+\label{ Largest Rectangle in Histogram }
 
 \subsubsection*{Problem Description}
 Given \emph{n} non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
@@ -3244,6 +3955,11 @@ Given height = \textbf{[2,1,5,6,2,3]},
 return \textbf{10}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Stack ]{ Stack }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/largest-rectangle-in-histogram/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3285,6 +4001,7 @@ public:
 
 
 \subsection{ Length of Last Word }
+\label{ Length of Last Word }
 
 \subsubsection*{Problem Description}
 Given a string \emph{s} consists of upper/lower-case alphabets and empty space characters \textbf{' '}, return the length of last word in the string.
@@ -3302,6 +4019,11 @@ Given \emph{s} = \textbf{"Hello World"},
 return \textbf{5}.
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/length-of-last-word/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3331,6 +4053,7 @@ public:
 
 
 \subsection{ Letter Combinations of a Phone Number }
+\label{ Letter Combinations of a Phone Number }
 
 \subsubsection*{Problem Description}
 Given a digit string, return all possible letter combinations that the number could represent.
@@ -3349,6 +4072,11 @@ Although the above answer is in lexicographical order, your answer could be in a
 <b>Output:</b> ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/letter-combinations-of-a-phone-number/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3381,6 +4109,7 @@ private:
 
 
 \subsection{ Linked List Cycle II }
+\label{ Linked List Cycle II }
 
 \subsubsection*{Problem Description}
 Given a linked list, return the node where the cycle begins. If there is no cycle, return \textbf{null}.
@@ -3389,6 +4118,11 @@ Follow up:
 Can you solve it without using extra space?
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/linked-list-cycle-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3420,6 +4154,7 @@ public:
 
 
 \subsection{ Linked List Cycle }
+\label{ Linked List Cycle }
 
 \subsubsection*{Problem Description}
 Given a linked list, determine if it has a cycle in it.
@@ -3430,6 +4165,11 @@ Follow up:
 Can you solve it without using extra space?
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/linked-list-cycle/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3461,11 +4201,17 @@ public:
 
 
 \subsection{ Longest Common Prefix }
+\label{ Longest Common Prefix }
 
 \subsubsection*{Problem Description}
 Write a function to find the longest common prefix string amongst an array of strings.
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/longest-common-prefix/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3495,6 +4241,7 @@ public:
 
 
 \subsection{ Longest Consecutive Sequence }
+\label{ Longest Consecutive Sequence }
 
 \subsubsection*{Problem Description}
 Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
@@ -3510,6 +4257,11 @@ The longest consecutive elements sequence is \textbf{[1, 2, 3, 4]}. Return its l
 Your algorithm should run in O(\emph{n}) complexity.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/longest-consecutive-sequence/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3539,11 +4291,17 @@ public:
 
 
 \subsection{ Longest Palindromic Substring }
+\label{ Longest Palindromic Substring }
 
 \subsubsection*{Problem Description}
 Given a string \emph{S}, find the longest palindromic substring in \emph{S}. You may assume that the maximum length of \emph{S} is 1000, and there exists one unique longest palindromic substring.
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/longest-palindromic-substring/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3579,11 +4337,17 @@ public:
 
 
 \subsection{ Longest Substring Without Repeating Characters }
+\label{ Longest Substring Without Repeating Characters }
 
 \subsubsection*{Problem Description}
 Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Two Pointers ]{ Two Pointers },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/longest-substring-without-repeating-characters/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3610,6 +4374,7 @@ public:
 
 
 \subsection{ Longest Valid Parentheses }
+\label{ Longest Valid Parentheses }
 
 \subsubsection*{Problem Description}
 Given a string containing just the characters \textbf{'('} and \textbf{')'}, find the length of the longest valid (well-formed) parentheses substring.
@@ -3619,6 +4384,11 @@ For \textbf{"(()"}, the longest valid parentheses substring is \textbf{"()"}, wh
 Another example is \textbf{")()())"}, where the longest valid parentheses substring is \textbf{"()()"}, which has length = 4.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/longest-valid-parentheses/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3646,6 +4416,7 @@ public:
 
 
 \subsection{ LRU Cache }
+\label{ LRU Cache }
 
 \subsubsection*{Problem Description}
 Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: \textbf{get} and \textbf{set}.
@@ -3654,6 +4425,11 @@ Design and implement a data structure for Least Recently Used (LRU) cache. It sh
 \textbf{set(key, value)} - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
 
 
+\textbf{Tags: }
+\hyperref[ Data Structure ]{ Data Structure }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/lru-cache/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3732,6 +4508,7 @@ private:
 
 
 \subsection{ Majority Element }
+\label{ Majority Element }
 
 \subsubsection*{Problem Description}
 Given an array of size \emph{n}, find the majority element. The majority element is the element that appears more than \textbf{⌊ n/2 ⌋} times.
@@ -3743,6 +4520,11 @@ You may assume that the array is non-empty and the majority element always exist
 Special thanks to @ts for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Divide and Conquer ]{ Divide and Conquer },  \hyperref[ Array ]{ Array },  \hyperref[ Bit Manipulation ]{ Bit Manipulation }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/majority-element/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3767,11 +4549,17 @@ public:
 
 
 \subsection{ Max Points on a Line }
+\label{ Max Points on a Line }
 
 \subsubsection*{Problem Description}
 Given \emph{n} points on a 2D plane, find the maximum number of points that lie on the same straight line.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/max-points-on-a-line/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3822,11 +4610,17 @@ private:
 
 
 \subsection{ Maximal Rectangle }
+\label{ Maximal Rectangle }
 
 \subsubsection*{Problem Description}
 Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing all ones and return its area.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Stack ]{ Stack },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/maximal-rectangle/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3873,6 +4667,7 @@ public:
 
 
 \subsection{ Maximum Depth of Binary Tree }
+\label{ Maximum Depth of Binary Tree }
 
 \subsubsection*{Problem Description}
 Given a binary tree, find its maximum depth.
@@ -3880,6 +4675,11 @@ Given a binary tree, find its maximum depth.
 The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/maximum-depth-of-binary-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3906,6 +4706,7 @@ public:
 
 
 \subsection{ Maximum Gap }
+\label{ Maximum Gap }
 
 \subsubsection*{Problem Description}
 Given an unsorted array, find the maximum difference between the successive elements in its sorted form.
@@ -3921,6 +4722,11 @@ You may assume all elements in the array are non-negative integers and fit in th
 Special thanks to @porker2008 for adding this problem and creating all test cases.
 
 
+\textbf{Tags: }
+\hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/maximum-gap/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3955,6 +4761,7 @@ public:
 
 
 \subsection{ Maximum Product Subarray }
+\label{ Maximum Product Subarray }
 
 \subsubsection*{Problem Description}
 Find the contiguous subarray within an array (containing at least one number) which has the largest product.
@@ -3965,6 +4772,11 @@ For example, given the array \textbf{[2,3,-2,4]},
 the contiguous subarray \textbf{[2,3]} has the largest product = \textbf{6}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/maximum-product-subarray/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -3990,6 +4802,7 @@ public:
 
 
 \subsection{ Maximum Subarray }
+\label{ Maximum Subarray }
 
 \subsubsection*{Problem Description}
 Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
@@ -4002,6 +4815,11 @@ the contiguous subarray \textbf{[4,−1,2,1]} has the largest sum = \textbf{6}.
 If you have figured out the O(\emph{n}) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 
+\textbf{Tags: }
+\hyperref[ Divide and Conquer ]{ Divide and Conquer },  \hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/maximum-subarray/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4024,11 +4842,17 @@ public:
 
 
 \subsection{ Median of Two Sorted Arrays }
+\label{ Median of Two Sorted Arrays }
 
 \subsubsection*{Problem Description}
 There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 
 
+\textbf{Tags: }
+\hyperref[ Divide and Conquer ]{ Divide and Conquer },  \hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/median-of-two-sorted-arrays/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4065,6 +4889,7 @@ private:
 
 
 \subsection{ Merge Intervals }
+\label{ Merge Intervals }
 
 \subsubsection*{Problem Description}
 Given a collection of intervals, merge all overlapping intervals.
@@ -4078,6 +4903,11 @@ Given \textbf{[1,3],[2,6],[8,10],[15,18]},
 return \textbf{[1,6],[8,10],[15,18]}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/merge-intervals/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4121,11 +4951,17 @@ private:
 
 
 \subsection{ Merge k Sorted Lists }
+\label{ Merge k Sorted Lists }
 
 \subsubsection*{Problem Description}
 Merge \emph{k} sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
 
 
+\textbf{Tags: }
+\hyperref[ Divide and Conquer ]{ Divide and Conquer },  \hyperref[ Linked List ]{ Linked List },  \hyperref[ Heap ]{ Heap }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/merge-k-sorted-lists/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4176,6 +5012,7 @@ public:
 
 
 \subsection{ Merge Sorted Array }
+\label{ Merge Sorted Array }
 
 \subsubsection*{Problem Description}
 Given two sorted integer arrays A and B, merge B into A as one sorted array.
@@ -4186,6 +5023,11 @@ Given two sorted integer arrays A and B, merge B into A as one sorted array.
 You may assume that A has enough space (size that is greater or equal to \emph{m} + \emph{n}) to hold additional elements from B. The number of elements initialized in A and B are \emph{m} and \emph{n} respectively.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/merge-sorted-array/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4216,11 +5058,17 @@ public:
 
 
 \subsection{ Merge Two Sorted Lists }
+\label{ Merge Two Sorted Lists }
 
 \subsubsection*{Problem Description}
 Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/merge-two-sorted-lists/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4261,6 +5109,7 @@ public:
 
 
 \subsection{ Min Stack }
+\label{ Min Stack }
 
 \subsubsection*{Problem Description}
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
@@ -4280,6 +5129,11 @@ getMin() -- Retrieve the minimum element in the stack.
 \end{itemize}
 
 
+\textbf{Tags: }
+\hyperref[ Stack ]{ Stack },  \hyperref[ Data Structure ]{ Data Structure }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/min-stack/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4321,6 +5175,7 @@ private:
 
 
 \subsection{ Minimum Depth of Binary Tree }
+\label{ Minimum Depth of Binary Tree }
 
 \subsubsection*{Problem Description}
 Given a binary tree, find its minimum depth.
@@ -4328,6 +5183,11 @@ Given a binary tree, find its minimum depth.
 The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/minimum-depth-of-binary-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4362,6 +5222,7 @@ public:
 
 
 \subsection{ Minimum Path Sum }
+\label{ Minimum Path Sum }
 
 \subsubsection*{Problem Description}
 Given a \emph{m} x \emph{n} grid filled with non-negative numbers, find a path from top left to bottom right which \emph{minimizes} the sum of all numbers along its path.
@@ -4369,6 +5230,11 @@ Given a \emph{m} x \emph{n} grid filled with non-negative numbers, find a path f
 \textbf{Note:} You can only move either down or right at any point in time.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/minimum-path-sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4397,6 +5263,7 @@ public:
 
 
 \subsection{ Minimum Window Substring }
+\label{ Minimum Window Substring }
 
 \subsubsection*{Problem Description}
 Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
@@ -4419,6 +5286,11 @@ If there is no such window in S that covers all characters in T, return the emtp
 If there are multiple such windows, you are guaranteed that there will always be only one unique minimum window in S.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Two Pointers ]{ Two Pointers },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/minimum-window-substring/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4461,6 +5333,7 @@ public:
 
 
 \subsection{ Multiply Strings }
+\label{ Multiply Strings }
 
 \subsubsection*{Problem Description}
 Given two numbers represented as strings, return multiplication of the numbers as a string.
@@ -4468,6 +5341,11 @@ Given two numbers represented as strings, return multiplication of the numbers a
 Note: The numbers can be arbitrarily large and are non-negative.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/multiply-strings/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4527,6 +5405,7 @@ private:
 
 
 \subsection{ N-Queens II }
+\label{ N-Queens II }
 
 \subsubsection*{Problem Description}
 Follow up for N-Queens problem.
@@ -4536,6 +5415,11 @@ Now, instead outputting board configurations, return the total number of distinc
 
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/n-queens-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4565,6 +5449,7 @@ private:
 
 
 \subsection{ N-Queens }
+\label{ N-Queens }
 
 \subsubsection*{Problem Description}
 The \emph{n}-queens puzzle is the problem of placing \emph{n} queens on an \emph{n}×\emph{n} chessboard such that no two queens attack each other.
@@ -4594,6 +5479,11 @@ There exist two distinct solutions to the 4-queens puzzle:
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/n-queens/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4638,6 +5528,7 @@ private:
 
 
 \subsection{ Next Permutation }
+\label{ Next Permutation }
 
 \subsubsection*{Problem Description}
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
@@ -4658,6 +5549,11 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 \textbf{1,1,5} → \textbf{1,5,1}
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/next-permutation/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4676,6 +5572,7 @@ public:
 
 
 \subsection{ Palindrome Number }
+\label{ Palindrome Number }
 
 \subsubsection*{Problem Description}
 Determine whether an integer is a palindrome. Do this without extra space.
@@ -4689,6 +5586,11 @@ You could also try reversing an integer. However, if you have solved the problem
 There is a more generic way of solving this problem.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/palindrome-number/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4714,6 +5616,7 @@ public:
 
 
 \subsection{ Palindrome Partitioning II }
+\label{ Palindrome Partitioning II }
 
 \subsubsection*{Problem Description}
 Given a string \emph{s}, partition \emph{s} such that every substring of the partition is a palindrome.
@@ -4726,6 +5629,11 @@ For example, given \emph{s} = \textbf{"aab"},
 Return \textbf{1} since the palindrome partitioning \textbf{["aa","b"]} could be produced using 1 cut.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/palindrome-partitioning-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4764,6 +5672,7 @@ public:
 
 
 \subsection{ Palindrome Partitioning }
+\label{ Palindrome Partitioning }
 
 \subsubsection*{Problem Description}
 Given a string \emph{s}, partition \emph{s} such that every substring of the partition is a palindrome.
@@ -4783,6 +5692,11 @@ Return
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/palindrome-partitioning/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4829,6 +5743,7 @@ private:
 
 
 \subsection{ Partition List }
+\label{ Partition List }
 
 \subsubsection*{Problem Description}
 Given a linked list and a value \emph{x}, partition it such that all nodes less than \emph{x} come before nodes greater than or equal to \emph{x}.
@@ -4844,6 +5759,11 @@ Given \textbf{1-$>$4-$>$3-$>$2-$>$5-$>$2} and \emph{x} = 3,
 return \textbf{1-$>$2-$>$2-$>$4-$>$3-$>$5}.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/partition-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4881,9 +5801,14 @@ public:
 
 
 \subsection{ Pascal's Triangle II }
+\label{ Pascal's Triangle II }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/pascal's-triangle-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4906,9 +5831,14 @@ public:
 
 
 \subsection{ Pascal's Triangle }
+\label{ Pascal's Triangle }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/pascal's-triangle/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -4937,6 +5867,7 @@ public:
 
 
 \subsection{ Path Sum II }
+\label{ Path Sum II }
 
 \subsubsection*{Problem Description}
 Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
@@ -4961,6 +5892,11 @@ return
         7    2  5   1
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/path-sum-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5006,6 +5942,7 @@ private:
 
 
 \subsection{ Path Sum }
+\label{ Path Sum }
 
 \subsubsection*{Problem Description}
 Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
@@ -5022,6 +5959,11 @@ return true, as there exist a root-to-leaf path \textbf{5-$>$4-$>$11-$>$2} which
         7    2      1
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/path-sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5054,6 +5996,7 @@ public:
 
 
 \subsection{ Permutation Sequence }
+\label{ Permutation Sequence }
 
 \subsubsection*{Problem Description}
 The set \textbf{[1,2,3,…,\emph{n}]} contains a total of \emph{n}! unique permutations.
@@ -5083,6 +6026,11 @@ Given \emph{n} and \emph{k}, return the \emph{k}th permutation sequence.
 \textbf{Note:} Given \emph{n} will be between 1 and 9 inclusive.
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking },  \hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/permutation-sequence/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5125,6 +6073,7 @@ private:
 
 
 \subsection{ Permutations II }
+\label{ Permutations II }
 
 \subsubsection*{Problem Description}
 Given a collection of numbers that might contain duplicates, return all possible unique permutations.
@@ -5138,6 +6087,11 @@ For example,
 \textbf{[1,1,2]}, \textbf{[1,2,1]}, and \textbf{[2,1,1]}.
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/permutations-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5159,6 +6113,7 @@ public:
 
 
 \subsection{ Permutations }
+\label{ Permutations }
 
 \subsubsection*{Problem Description}
 Given a collection of numbers, return all possible permutations.
@@ -5172,6 +6127,11 @@ For example,
 \textbf{[1,2,3]}, \textbf{[1,3,2]}, \textbf{[2,1,3]}, \textbf{[2,3,1]}, \textbf{[3,1,2]}, and \textbf{[3,2,1]}.
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/permutations/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5193,6 +6153,7 @@ public:
 
 
 \subsection{ Plus One }
+\label{ Plus One }
 
 \subsubsection*{Problem Description}
 Given a non-negative number represented as an array of digits, plus one to the number.
@@ -5200,6 +6161,11 @@ Given a non-negative number represented as an array of digits, plus one to the n
 The digits are stored such that the most significant digit is at the head of the list.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/plus-one/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5229,6 +6195,7 @@ public:
 
 
 \subsection{ Populating Next Right Pointers in Each Node II }
+\label{ Populating Next Right Pointers in Each Node II }
 
 \subsubsection*{Problem Description}
 Follow up for problem "\emph{Populating Next Right Pointers in Each Node}".
@@ -5266,6 +6233,11 @@ After calling your function, the tree should look like:
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5308,6 +6280,7 @@ private:
 
 
 \subsection{ Populating Next Right Pointers in Each Node }
+\label{ Populating Next Right Pointers in Each Node }
 
 \subsubsection*{Problem Description}
 Given a binary tree
@@ -5355,6 +6328,11 @@ After calling your function, the tree should look like:
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5395,9 +6373,14 @@ public:
 
 
 \subsection{ Pow(x, n) }
+\label{ Pow(x, n) }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/pow(x,-n)/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5426,6 +6409,7 @@ private:
 
 
 \subsection{ Recover Binary Search Tree }
+\label{ Recover Binary Search Tree }
 
 \subsubsection*{Problem Description}
 Two elements of a binary search tree (BST) are swapped by mistake.
@@ -5449,6 +6433,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/recover-binary-search-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5520,6 +6509,7 @@ private:
 
 
 \subsection{ Regular Expression Matching }
+\label{ Regular Expression Matching }
 
 \subsubsection*{Problem Description}
 Implement regular expression matching with support for \textbf{'.'} and \textbf{'*'}.
@@ -5543,6 +6533,11 @@ isMatch("ab", ".*") → true
 isMatch("aab", "c*a*b") → true
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ Backtracking ]{ Backtracking },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/regular-expression-matching/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5577,6 +6572,7 @@ public:
 
 
 \subsection{ Remove Duplicates from Sorted Array II }
+\label{ Remove Duplicates from Sorted Array II }
 
 \subsubsection*{Problem Description}
 Follow up for "Remove Duplicates":
@@ -5592,6 +6588,11 @@ Given sorted array A = \textbf{[1,1,1,2,2,3]},
 Your function should return length = \textbf{5}, and A is now \textbf{[1,1,2,2,3]}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/remove-duplicates-from-sorted-array-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5615,6 +6616,7 @@ public:
 
 
 \subsection{ Remove Duplicates from Sorted Array }
+\label{ Remove Duplicates from Sorted Array }
 
 \subsubsection*{Problem Description}
 Given a sorted array, remove the duplicates in place such that each element appear only \emph{once} and return the new length.
@@ -5629,6 +6631,11 @@ Given input array A = \textbf{[1,1,2]},
 Your function should return length = \textbf{2}, and A is now \textbf{[1,2]}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5650,6 +6657,7 @@ public:
 
 
 \subsection{ Remove Duplicates from Sorted List II }
+\label{ Remove Duplicates from Sorted List II }
 
 \subsubsection*{Problem Description}
 Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only \emph{distinct} numbers from the original list.
@@ -5663,6 +6671,11 @@ Given \textbf{1-$>$2-$>$3-$>$3-$>$4-$>$4-$>$5}, return \textbf{1-$>$2-$>$5}.
 Given \textbf{1-$>$1-$>$1-$>$2-$>$3}, return \textbf{2-$>$3}.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/remove-duplicates-from-sorted-list-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5705,6 +6718,7 @@ public:
 
 
 \subsection{ Remove Duplicates from Sorted List }
+\label{ Remove Duplicates from Sorted List }
 
 \subsubsection*{Problem Description}
 Given a sorted linked list, delete all duplicates such that each element appear only \emph{once}.
@@ -5718,6 +6732,11 @@ Given \textbf{1-$>$1-$>$2}, return \textbf{1-$>$2}.
 Given \textbf{1-$>$1-$>$2-$>$3-$>$3}, return \textbf{1-$>$2-$>$3}.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/remove-duplicates-from-sorted-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5753,6 +6772,7 @@ public:
 
 
 \subsection{ Remove Element }
+\label{ Remove Element }
 
 \subsubsection*{Problem Description}
 Given an array and a value, remove all instances of that value in place and return the new length.
@@ -5760,6 +6780,11 @@ Given an array and a value, remove all instances of that value in place and retu
 The order of elements can be changed. It doesn't matter what you leave beyond the new length.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/remove-element/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5780,6 +6805,7 @@ public:
 
 
 \subsection{ Remove Nth Node From End of List }
+\label{ Remove Nth Node From End of List }
 
 \subsubsection*{Problem Description}
 Given a linked list, remove the \emph{n}th node from the end of list and return its head.
@@ -5800,6 +6826,11 @@ Try to do this in one pass.
    After removing the second node from the end, the linked list becomes <b>1->2->3->5</b>.
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5840,6 +6871,7 @@ public:
 
 
 \subsection{ Reorder List }
+\label{ Reorder List }
 
 \subsubsection*{Problem Description}
 Given a singly linked list \emph{L}: \emph{L}0→\emph{L}1→…→\emph{L}\emph{n}-1→\emph{L}n,
@@ -5851,6 +6883,11 @@ For example,
 Given \textbf{\{1,2,3,4\}}, reorder it to \textbf{\{1,4,2,3\}}.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/reorder-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5904,6 +6941,7 @@ private:
 
 
 \subsection{ Restore IP Addresses }
+\label{ Restore IP Addresses }
 
 \subsubsection*{Problem Description}
 Given a string containing only digits, restore it by returning all possible valid IP address combinations.
@@ -5916,6 +6954,11 @@ Given \textbf{"25525511135"},
 return \textbf{["255.255.11.135", "255.255.111.35"]}. (Order does not matter)
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/restore-ip-addresses/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -5964,6 +7007,7 @@ private:
 
 
 \subsection{ Reverse Integer }
+\label{ Reverse Integer }
 
 \subsubsection*{Problem Description}
 Reverse digits of an integer.
@@ -5980,6 +7024,11 @@ For the purpose of this problem, assume that your function returns 0 when the re
 Test cases had been added to test the overflow behavior.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/reverse-integer/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6013,6 +7062,7 @@ private:
 
 
 \subsection{ Reverse Linked List II }
+\label{ Reverse Linked List II }
 
 \subsubsection*{Problem Description}
 Reverse a linked list from position \emph{m} to \emph{n}. Do it in-place and in one-pass.
@@ -6033,6 +7083,11 @@ Given \emph{m}, \emph{n} satisfy the following condition:
 1 ≤ \emph{m} ≤ \emph{n} ≤ length of list.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/reverse-linked-list-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6070,6 +7125,7 @@ public:
 
 
 \subsection{ Reverse Nodes in k-Group }
+\label{ Reverse Nodes in k-Group }
 
 \subsubsection*{Problem Description}
 Given a linked list, reverse the nodes of a linked list \emph{k} at a time and return its modified list.
@@ -6090,6 +7146,11 @@ For \emph{k} = 2, you should return: \textbf{2-$>$1-$>$4-$>$3-$>$5}
 For \emph{k} = 3, you should return: \textbf{3-$>$2-$>$1-$>$4-$>$5}
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/reverse-nodes-in-k-group/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6129,6 +7190,7 @@ public:
 
 
 \subsection{ Reverse Words in a String }
+\label{ Reverse Words in a String }
 
 \subsubsection*{Problem Description}
 Given an input string, reverse the string word by word.
@@ -6147,6 +7209,11 @@ Reduce them to a single space in the reversed string.
 \end{itemize}
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/reverse-words-in-a-string/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6190,6 +7257,7 @@ private:
 
 
 \subsection{ Roman to Integer }
+\label{ Roman to Integer }
 
 \subsubsection*{Problem Description}
 Given a roman numeral, convert it to an integer.
@@ -6197,6 +7265,11 @@ Given a roman numeral, convert it to an integer.
 Input is guaranteed to be within the range from 1 to 3999.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/roman-to-integer/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6251,6 +7324,7 @@ public:
 
 
 \subsection{ Rotate List }
+\label{ Rotate List }
 
 \subsubsection*{Problem Description}
 Given a list, rotate the list to the right by \emph{k} places, where \emph{k} is non-negative.
@@ -6264,6 +7338,11 @@ Given \textbf{1-$>$2-$>$3-$>$4-$>$5-$>$NULL} and \emph{k} = \textbf{2},
 return \textbf{4-$>$5-$>$1-$>$2-$>$3-$>$NULL}.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/rotate-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6301,6 +7380,7 @@ public:
 
 
 \subsection{ Same Tree }
+\label{ Same Tree }
 
 \subsubsection*{Problem Description}
 Given two binary trees, write a function to check if they are equal or not.
@@ -6308,6 +7388,11 @@ Given two binary trees, write a function to check if they are equal or not.
 Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/same-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6339,6 +7424,7 @@ public:
 
 
 \subsection{ Scramble String }
+\label{ Scramble String }
 
 \subsubsection*{Problem Description}
 Given a string \emph{s1}, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
@@ -6385,6 +7471,11 @@ r   g  ta  e
       t   a
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/scramble-string/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6424,6 +7515,7 @@ private:
 
 
 \subsection{ Search a 2D Matrix }
+\label{ Search a 2D Matrix }
 
 \subsubsection*{Problem Description}
 Write an efficient algorithm that searches for a value in an \emph{m} x \emph{n} matrix. This matrix has the following properties:
@@ -6447,6 +7539,11 @@ Given \textbf{target} = \textbf{3}, return \textbf{true}.
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/search-a-2d-matrix/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6473,6 +7570,7 @@ public:
 
 
 \subsection{ Search for a Range }
+\label{ Search for a Range }
 
 \subsubsection*{Problem Description}
 Given a sorted array of integers, find the starting and ending position of a given target value.
@@ -6490,6 +7588,11 @@ Given \textbf{[5, 7, 7, 8, 8, 10]} and target value 8,
 return \textbf{[3, 4]}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/search-for-a-range/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6542,6 +7645,7 @@ private:
 
 
 \subsection{ Search in Rotated Sorted Array II }
+\label{ Search in Rotated Sorted Array II }
 
 \subsubsection*{Problem Description}
 Follow up for "Search in Rotated Sorted Array":
@@ -6554,6 +7658,11 @@ Would this affect the run-time complexity? How and why?
 Write a function to determine if a given target is in the array.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/search-in-rotated-sorted-array-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6588,6 +7697,7 @@ public:
 
 
 \subsection{ Search in Rotated Sorted Array }
+\label{ Search in Rotated Sorted Array }
 
 \subsubsection*{Problem Description}
 Suppose a sorted array is rotated at some pivot unknown to you beforehand.
@@ -6599,6 +7709,11 @@ You are given a target value to search. If found in the array return its index, 
 You may assume no duplicate exists in the array.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/search-in-rotated-sorted-array/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6652,6 +7767,7 @@ private:
 
 
 \subsection{ Search Insert Position }
+\label{ Search Insert Position }
 
 \subsubsection*{Problem Description}
 Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
@@ -6673,6 +7789,11 @@ Here are few examples.
 \textbf{[1,3,5,6]}, 0 → 0
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Binary Search ]{ Binary Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/search-insert-position/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6698,6 +7819,7 @@ public:
 
 
 \subsection{ Set Matrix Zeroes }
+\label{ Set Matrix Zeroes }
 
 \subsubsection*{Problem Description}
 Given a \emph{m} x \emph{n} matrix, if an element is 0, set its entire row and column to 0. Do it in place.
@@ -6714,6 +7836,11 @@ A simple improvement uses O(\emph{m} + \emph{n}) space, but still not the best s
 Could you devise a constant space solution?
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/set-matrix-zeroes/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6746,6 +7873,7 @@ public:
 
 
 \subsection{ Simplify Path }
+\label{ Simplify Path }
 
 \subsubsection*{Problem Description}
 Given an absolute path for a file (Unix-style), simplify it.
@@ -6777,6 +7905,11 @@ In this case, you should ignore redundant slashes and return \textbf{"/home/foo"
 \end{itemize}
 
 
+\textbf{Tags: }
+\hyperref[ Stack ]{ Stack },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/simplify-path/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6827,6 +7960,7 @@ private:
 
 
 \subsection{ Single Number II }
+\label{ Single Number II }
 
 \subsubsection*{Problem Description}
 Given an array of integers, every element appears \emph{three} times except for one. Find that single one.
@@ -6835,6 +7969,11 @@ Given an array of integers, every element appears \emph{three} times except for 
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
 
+\textbf{Tags: }
+\hyperref[ Bit Manipulation ]{ Bit Manipulation }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/single-number-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6870,9 +8009,14 @@ private:
 
 
 \subsection{ Single Number II2 }
+\label{ Single Number II2 }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/single-number-ii2/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6907,9 +8051,14 @@ private:
 
 
 \subsection{ Single Number II3 }
+\label{ Single Number II3 }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/single-number-ii3/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6933,6 +8082,7 @@ public:
 
 
 \subsection{ Single Number }
+\label{ Single Number }
 
 \subsubsection*{Problem Description}
 Given an array of integers, every element appears \emph{twice} except for one. Find that single one.
@@ -6941,6 +8091,11 @@ Given an array of integers, every element appears \emph{twice} except for one. F
 Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Bit Manipulation ]{ Bit Manipulation }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/single-number/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -6961,6 +8116,7 @@ public:
 
 
 \subsection{ Sort Colors }
+\label{ Sort Colors }
 
 \subsubsection*{Problem Description}
 Given an array with \emph{n} objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
@@ -6983,6 +8139,11 @@ First, iterate the array counting number of 0's, 1's, and 2's, then overwrite ar
 Could you come up with an one-pass algorithm using only constant space?
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Two Pointers ]{ Two Pointers },  \hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/sort-colors/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7007,11 +8168,17 @@ public:
 
 
 \subsection{ Sort List }
+\label{ Sort List }
 
 \subsubsection*{Problem Description}
 Sort a linked list in \emph{O}(\emph{n} log \emph{n}) time using constant space complexity.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List },  \hyperref[ Sort ]{ Sort }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/sort-list/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7081,6 +8248,7 @@ private:
 
 
 \subsection{ Spiral Matrix II }
+\label{ Spiral Matrix II }
 
 \subsubsection*{Problem Description}
 Given an integer \emph{n}, generate a square matrix filled with elements from 1 to \emph{n}2 in spiral order.
@@ -7098,6 +8266,11 @@ Given \emph{n} = \textbf{3},
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/spiral-matrix-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7134,6 +8307,7 @@ private:
 
 
 \subsection{ Spiral Matrix }
+\label{ Spiral Matrix }
 
 \subsubsection*{Problem Description}
 Given a matrix of \emph{m} x \emph{n} elements (\emph{m} rows, \emph{n} columns), return all elements of the matrix in spiral order.
@@ -7153,6 +8327,11 @@ You should return \textbf{[1,2,3,6,9,8,7,4,5]}.
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/spiral-matrix/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7191,9 +8370,14 @@ private:
 
 
 \subsection{ Sqrt(x) }
+\label{ Sqrt(x) }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/sqrt(x)/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7219,9 +8403,14 @@ public:
 
 
 \subsection{ String to Integer (atoi) }
+\label{ String to Integer (atoi) }
 
 \subsubsection*{Problem Description}
 
+\textbf{Tags: }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/string-to-integer-(atoi)/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7254,6 +8443,7 @@ public:
 
 
 \subsection{ Subsets II }
+\label{ Subsets II }
 
 \subsubsection*{Problem Description}
 Given a collection of integers that might contain duplicates, \emph{S}, return all possible subsets.
@@ -7282,6 +8472,11 @@ If \textbf{\emph{S}} = \textbf{[1,2,2]}, a solution is:
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/subsets-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7319,6 +8514,7 @@ private:
 
 
 \subsection{ Subsets }
+\label{ Subsets }
 
 \subsubsection*{Problem Description}
 Given a set of distinct integers, \emph{S}, return all possible subsets.
@@ -7349,6 +8545,11 @@ If \textbf{\emph{S}} = \textbf{[1,2,3]}, a solution is:
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Backtracking ]{ Backtracking },  \hyperref[ Bit Manipulation ]{ Bit Manipulation }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/subsets/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7381,6 +8582,7 @@ private:
 
 
 \subsection{ Substring with Concatenation of All Words }
+\label{ Substring with Concatenation of All Words }
 
 \subsubsection*{Problem Description}
 You are given a string, \textbf{S}, and a list of words, \textbf{L}, that are all of the same length. Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once and without any intervening characters.
@@ -7399,6 +8601,11 @@ You should return the indices: \textbf{[0,9]}.
 (order does not matter).
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table },  \hyperref[ Two Pointers ]{ Two Pointers },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/substring-with-concatenation-of-all-words/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7533,6 +8740,7 @@ private:
 
 
 \subsection{ Sudoku Solver }
+\label{ Sudoku Solver }
 
 \subsubsection*{Problem Description}
 Write a program to solve a Sudoku puzzle by filling the empty cells.
@@ -7550,6 +8758,11 @@ A sudoku puzzle...
 ...and its solution numbers marked in red.
 
 
+\textbf{Tags: }
+\hyperref[ Backtracking ]{ Backtracking },  \hyperref[ Hash Table ]{ Hash Table }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/sudoku-solver/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7593,6 +8806,7 @@ private:
 
 
 \subsection{ Sum Root to Leaf Numbers }
+\label{ Sum Root to Leaf Numbers }
 
 \subsubsection*{Problem Description}
 Given a binary tree containing digits from \textbf{0-9} only, each root-to-leaf path could represent a number.
@@ -7616,6 +8830,11 @@ The root-to-leaf path \textbf{1-$>$3} represents the number \textbf{13}.
 Return the sum = 12 + 13 = \textbf{25}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/sum-root-to-leaf-numbers/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7653,6 +8872,7 @@ private:
 
 
 \subsection{ Surrounded Regions }
+\label{ Surrounded Regions }
 
 \subsubsection*{Problem Description}
 Given a 2D board containing \textbf{'X'} and \textbf{'O'}, capture all regions surrounded by \textbf{'X'}.
@@ -7678,6 +8898,11 @@ X O X X
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Breadth-first Search ]{ Breadth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/surrounded-regions/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7730,6 +8955,7 @@ private:
 
 
 \subsection{ Swap Nodes in Pairs }
+\label{ Swap Nodes in Pairs }
 
 \subsubsection*{Problem Description}
 Given a linked list, swap every two adjacent nodes and return its head.
@@ -7742,6 +8968,11 @@ Given \textbf{1-$>$2-$>$3-$>$4}, you should return the list as \textbf{2-$>$1-$>
 Your algorithm should use only constant space. You may \textbf{not} modify the values in the list, only nodes itself can be changed.
 
 
+\textbf{Tags: }
+\hyperref[ Linked List ]{ Linked List }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/swap-nodes-in-pairs/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7773,6 +9004,7 @@ public:
 
 
 \subsection{ Symmetric Tree }
+\label{ Symmetric Tree }
 
 \subsubsection*{Problem Description}
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
@@ -7819,6 +9051,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/symmetric-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7853,6 +9090,7 @@ private:
 
 
 \subsection{ Text Justification }
+\label{ Text Justification }
 
 \subsubsection*{Problem Description}
 Given an array of words and a length \emph{L}, format the text such that each line has exactly \emph{L} characters and is fully (left and right) justified.
@@ -7895,6 +9133,11 @@ In this case, that line should be left-justified.
 \end{itemize}
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/text-justification/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7950,6 +9193,7 @@ public:
 
 
 \subsection{ Trapping Rain Water }
+\label{ Trapping Rain Water }
 
 \subsubsection*{Problem Description}
 Given \emph{n} non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
@@ -7962,6 +9206,11 @@ Given \textbf{[0,1,0,2,1,0,1,3,2,1,2,1]}, return \textbf{6}.
 The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. \textbf{Thanks Marcos} for contributing this image!
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Stack ]{ Stack },  \hyperref[ Two Pointers ]{ Two Pointers }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/trapping-rain-water/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -7989,6 +9238,7 @@ public:
 
 
 \subsection{ Triangle }
+\label{ Triangle }
 
 \subsubsection*{Problem Description}
 Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
@@ -8013,6 +9263,11 @@ The minimum path sum from top to bottom is \textbf{11} (i.e., 2 + 3 + 5 + 1 = 11
 Bonus point if you are able to do this using only \emph{O}(\emph{n}) extra space, where \emph{n} is the total number of rows in the triangle.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/triangle/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8034,6 +9289,7 @@ public:
 
 
 \subsection{ Two Sum }
+\label{ Two Sum }
 
 \subsubsection*{Problem Description}
 Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -8043,6 +9299,11 @@ The function twoSum should return indices of the two numbers such that they add 
 You may assume that each input would have exactly one solution.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Hash Table ]{ Hash Table }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/two-sum/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8067,6 +9328,7 @@ public:
 
 
 \subsection{ Unique Binary Search Trees II }
+\label{ Unique Binary Search Trees II }
 
 \subsubsection*{Problem Description}
 Given \emph{n}, generate all structurally unique \textbf{BST's} (binary search trees) that store values 1...\emph{n}.
@@ -8101,6 +9363,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/unique-binary-search-trees-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8147,6 +9414,7 @@ private:
 
 
 \subsection{ Unique Binary Search Trees }
+\label{ Unique Binary Search Trees }
 
 \subsubsection*{Problem Description}
 Given \emph{n}, how many structurally unique \textbf{BST's} (binary search trees) that store values 1...\emph{n}?
@@ -8165,6 +9433,11 @@ Given \emph{n} = 3, there are a total of 5 unique BST's.
 \end{verbatim}
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/unique-binary-search-trees/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8189,6 +9462,7 @@ private:
 
 
 \subsection{ Unique Paths II }
+\label{ Unique Paths II }
 
 \subsubsection*{Problem Description}
 Follow up for "Unique Paths":
@@ -8214,6 +9488,11 @@ The total number of unique paths is \textbf{2}.
 ]
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/unique-paths-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8247,6 +9526,7 @@ public:
 
 
 \subsection{ Unique Paths }
+\label{ Unique Paths }
 
 \subsubsection*{Problem Description}
 A robot is located at the top-left corner of a \emph{m} x \emph{n} grid (marked 'Start' in the diagram below).
@@ -8260,6 +9540,11 @@ Above is a 3 x 7 grid. How many possible unique paths are there?
 \textbf{Note:} \emph{m} and \emph{n} will be at most 100.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/unique-paths/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8285,6 +9570,7 @@ private:
 
 
 \subsection{ Valid Number }
+\label{ Valid Number }
 
 \subsubsection*{Problem Description}
 Validate if a given string is numeric.
@@ -8312,6 +9598,11 @@ Some examples:
 New test cases had been added. Thanks \textbf{unfounder}'s contribution.
 
 
+\textbf{Tags: }
+\hyperref[ Math ]{ Math },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/valid-number/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8385,6 +9676,7 @@ private:
 
 
 \subsection{ Valid Palindrome }
+\label{ Valid Palindrome }
 
 \subsubsection*{Problem Description}
 Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
@@ -8405,6 +9697,11 @@ Have you consider that the string might be empty? This is a good question to ask
 For the purpose of this problem, we define empty string as valid palindrome.
 
 
+\textbf{Tags: }
+\hyperref[ Two Pointers ]{ Two Pointers },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/valid-palindrome/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8434,6 +9731,7 @@ public:
 
 
 \subsection{ Valid Parentheses }
+\label{ Valid Parentheses }
 
 \subsubsection*{Problem Description}
 Given a string containing just the characters \textbf{'('}, \textbf{')'}, \textbf{'\{'}, \textbf{'\}'}, \textbf{'['} and \textbf{']'}, determine if the input string is valid.
@@ -8441,6 +9739,11 @@ Given a string containing just the characters \textbf{'('}, \textbf{')'}, \textb
 The brackets must close in the correct order, \textbf{"()"} and \textbf{"()[]\{\}"} are all valid but \textbf{"(]"} and \textbf{"([)]"} are not.
 
 
+\textbf{Tags: }
+\hyperref[ Stack ]{ Stack },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/valid-parentheses/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8479,6 +9782,7 @@ public:
 
 
 \subsection{ Valid Sudoku }
+\label{ Valid Sudoku }
 
 \subsubsection*{Problem Description}
 Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
@@ -8493,6 +9797,11 @@ A partially filled sudoku which is valid.
 A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
 
 
+\textbf{Tags: }
+\hyperref[ Hash Table ]{ Hash Table }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/valid-sudoku/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8525,6 +9834,7 @@ public:
 
 
 \subsection{ Validate Binary Search Tree }
+\label{ Validate Binary Search Tree }
 
 \subsubsection*{Problem Description}
 Given a binary tree, determine if it is a valid binary search tree (BST).
@@ -8553,6 +9863,11 @@ Here's an example:
 The above binary tree is serialized as \textbf{"\{1,2,3,\#,\#,4,\#,\#,5\}"}.
 
 
+\textbf{Tags: }
+\hyperref[ Tree ]{ Tree },  \hyperref[ Depth-first Search ]{ Depth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/validate-binary-search-tree/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8599,6 +9914,7 @@ private:
 
 
 \subsection{ Wildcard Matching }
+\label{ Wildcard Matching }
 
 \subsubsection*{Problem Description}
 Implement wildcard pattern matching with support for \textbf{'?'} and \textbf{'*'}.
@@ -8622,6 +9938,11 @@ isMatch("ab", "?*") → true
 isMatch("aab", "c*a*b") → false
 \end{verbatim}
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ Backtracking ]{ Backtracking },  \hyperref[ Greedy ]{ Greedy },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/wildcard-matching/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8691,6 +10012,7 @@ private:
 
 
 \subsection{ Word Break II }
+\label{ Word Break II }
 
 \subsubsection*{Problem Description}
 Given a string \emph{s} and a dictionary of words \emph{dict}, add spaces in \emph{s} to construct a sentence where each word is a valid dictionary word.
@@ -8704,6 +10026,11 @@ For example, given
 A solution is \textbf{["cats and dog", "cat sand dog"]}.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming },  \hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/word-break-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8750,6 +10077,7 @@ private:
 
 
 \subsection{ Word Break }
+\label{ Word Break }
 
 \subsubsection*{Problem Description}
 Given a string \emph{s} and a dictionary of words \emph{dict}, determine if \emph{s} can be segmented into a space-separated sequence of one or more dictionary words.
@@ -8761,6 +10089,11 @@ For example, given
 Return true because \textbf{"leetcode"} can be segmented as \textbf{"leet code"}.
 
 
+\textbf{Tags: }
+\hyperref[ Dynamic Programming ]{ Dynamic Programming }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/word-break/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8791,6 +10124,7 @@ public:
 
 
 \subsection{ Word Ladder II }
+\label{ Word Ladder II }
 
 \subsubsection*{Problem Description}
 Given two words (\emph{start} and \emph{end}), and a dictionary, find all shortest transformation sequence(s) from \emph{start} to \emph{end}, such that:
@@ -8827,6 +10161,11 @@ Return
 \end{itemize}
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Backtracking ]{ Backtracking },  \hyperref[ Breadth-first Search ]{ Breadth-first Search },  \hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/word-ladder-ii/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -8964,6 +10303,7 @@ private:
 
 
 \subsection{ Word Ladder }
+\label{ Word Ladder }
 
 \subsubsection*{Problem Description}
 Given two words (\emph{start} and \emph{end}), and a dictionary, find the length of shortest transformation sequence from \emph{start} to \emph{end}, such that:
@@ -8996,6 +10336,11 @@ return its length \textbf{5}.
 \end{itemize}
 
 
+\textbf{Tags: }
+\hyperref[ Breadth-first Search ]{ Breadth-first Search }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/word-ladder/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -9084,6 +10429,7 @@ private:
 
 
 \subsection{ Word Search }
+\label{ Word Search }
 
 \subsubsection*{Problem Description}
 Given a 2D board and a word, find if the word exists in the grid.
@@ -9111,6 +10457,11 @@ Given \textbf{board} =
 \textbf{word} = \textbf{"ABCB"}, -$>$ returns \textbf{false}.
 
 
+\textbf{Tags: }
+\hyperref[ Array ]{ Array },  \hyperref[ Backtracking ]{ Backtracking }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/word-search/}{Submit}}
 
 \subsubsection*{Solution}
 水题
@@ -9158,6 +10509,7 @@ private:
 
 
 \subsection{ ZigZag Conversion }
+\label{ ZigZag Conversion }
 
 \subsubsection*{Problem Description}
 The string \textbf{"PAYPALISHIRING"} is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
@@ -9176,6 +10528,11 @@ Write the code that will take a string and make this conversion given a number o
 \textbf{convert("PAYPALISHIRING", 3)} should return \textbf{"PAHNAPLSIIGYIR"}.
 
 
+\textbf{Tags: }
+\hyperref[ String ]{ String }
+
+
+\rightline{\href{https://oj.leetcode.com/problems/zigzag-conversion/}{Submit}}
 
 \subsubsection*{Solution}
 水题

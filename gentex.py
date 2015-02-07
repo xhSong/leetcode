@@ -9,7 +9,7 @@ texspecific = {'#':'\\#', '$': '\\$', '%': '\\%', '{': '\\{', '}': '\\}', '~': '
 
 def getPart(html, startstr, endstr):
 	start = html.find(startstr)
-	end = html.find(endstr, start)
+	end = html.find(endstr, start + len(startstr))
 	return parser.unescape(html[start + len(startstr): end].decode('utf8'))
 
 def text2tex(text):
@@ -71,7 +71,7 @@ def getInitCode(html, language = "C++"):
 
 def writeTexHead():
 	texhead = '''
-\documentclass[courier]{article}
+\documentclass{article}
 \usepackage{CJK}
 \usepackage[top=1in, bottom=1in, left=1.2in, right=1.2in]{geometry}
 \usepackage{multirow}
@@ -81,21 +81,21 @@ def writeTexHead():
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{color}
-\definecolor{gray}{rgb}{0.8,0.8,0.8}
+\usepackage[colorlinks,linkcolor=blue]{hyperref}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
 \usepackage{listings}
 \lstset{numbers=left, 
 		basicstyle=\\small\\ttfamily,
 		language=C++, 
 		breaklines, 
 		extendedchars=false, 
-		keywordstyle=\color{blue}\\ttfamily,
+		keywordstyle=\color{blue}\\bfseries,
 		frame=none,
 		tabsize=4,
-		commentstyle=\color{red},
-		stringstyle=\emph\\bfseries
+		commentstyle=\color{gray},
+		stringstyle=\emph\\bfseries,
+		columns=flexible
 		}
-% \usepackage[palatino,gill,courier]{altfont}
-% \DefaultSFFont{sf}
 \\begin{document}
 \\begin{CJK*}{UTF8}{gkai}
 \CJKindent
@@ -104,7 +104,6 @@ def writeTexHead():
 
 \maketitle
 
-\section{Solutions of leetcode algorithm problems}
 	'''
 	print >> texfile, texhead
 
@@ -114,7 +113,7 @@ def writeTexTail():
 \end{document} '''
 	print >> texfile, textail
 
-def writeProblem(name, desp, initcode):
+def writeProblem(name, desp, initcode, tags):
 	print name
 	solution, code = "", ""
 	try:
@@ -125,10 +124,21 @@ def writeProblem(name, desp, initcode):
 		code = open("code/" + name + ".cpp").read().decode('utf8')
 	except:
 		pass
-	print >> texfile, "\n\\subsection{", name, "}"
+	print >> texfile, "\n\\subsection{", name, "}\n\\label{", name, "}"
 	# print >> texfile, "\\begin{verbatim}\n" + desp + "\n\\end{verbatim}\n"
 	print >> texfile, "\n\\subsubsection*{Problem Description}\n", desp
+
 	# print >> texfile, "\\begin{lstlisting}\n", initcode, "\n\\end{lstlisting}"
+
+	print >> texfile, "\\textbf{Tags: }"
+	for i in range(len(tags)):
+		if i == len(tags) - 1:
+			print >> texfile, "\\hyperref[", tags[i], "]{", tags[i], "}"
+		else:
+			print >> texfile, "\\hyperref[", tags[i], "]{", tags[i], "}, ", 
+	
+	print >> texfile, "\n\n\\rightline{\\href{https://oj.leetcode.com/problems/" + name.lower().replace(' ', '-') + "/}{Submit}}"
+	
 	if solution:
 		print >> texfile, "\n\\subsubsection*{Solution}\n", solution
 	else:
@@ -136,14 +146,44 @@ def writeProblem(name, desp, initcode):
 
 	print >> texfile, "\n\\subsubsection*{Code}\n\\begin{lstlisting}\n", code, "\n\\end{lstlisting}\n"
 
-writeTexHead()
+def getTags(html):
+	tags = getPart(html, "Show Tags</div>", "</div>")
+	# print tags
+	tags = re.findall(r'>(.+?)</a>', tags)
+	return tags
 
-for filename in os.listdir("problems/"):
-	name = filename.split(".")[0]
-	html = open("problems/" + filename).read()
-	desp = getProblem(html)
-	initcode = getInitCode(html)
-	writeProblem(name, desp, initcode)
+def writeTagsClassify():
+	tagset = {}
+	for filename in os.listdir("problems/"):
+		name = "".join(filename.split('.')[:-1])
+		tags = getTags(open("problems/" + filename).read())
+		for tag in tags:
+			if tag not in tagset:
+				tagset[tag] = []
+			tagset[tag].append(name)
+	print tagset
+	print >> texfile, "\\section{Problems Classify}"
+	for tag, problems in tagset.items():
+		print >> texfile, "\n\\subsection*{", tag, "}\n\\label{", tag, "}" 
+		for i in range(len(problems)):
+			if i == len(problems) - 1:
+				print >> texfile, "\\hyperref[", problems[i], "]{", problems[i], "}"
+			else:
+				print >> texfile, "\\hyperref[", problems[i], "]{", problems[i], "},"
 
-writeTexTail()
+if __name__ == '__main__':
+	writeTexHead()
+	writeTagsClassify()
+	
+	print >> texfile, "\\section{Solutions of leetcode algorithm problems}"
+	for filename in os.listdir("problems/"):
+		name = filename.split(".")[0]
+		html = open("problems/" + filename).read()
+		desp = getProblem(html)
+		initcode = getInitCode(html)
+		tags = getTags(html)
+		writeProblem(name = name, desp = desp, initcode = initcode, tags = tags)
+
+	writeTexTail()
+
 
