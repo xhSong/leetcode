@@ -1,35 +1,30 @@
 class Solution {
 public:
     vector<string> wordBreak(string s, unordered_set<string> &dict) {
-        vector<bool> f(s.size() + 1, false);
-        vector<string> dicts;
-        for (unordered_set<string>::iterator it = dict.begin(); it != dict.end(); ++it) {
-            dicts.push_back(*it);
-        }
-        f[0] = true;
-        for (int i = 1; i <= s.size(); ++i) {
-            for (int j = 0; j < dicts.size(); ++j) {
-                int cutlen = dicts[j].length();
-                if (i >= cutlen && s.substr(i - cutlen, cutlen) == dicts[j]) {
-                    f[i] = f[i] | f[i - cutlen];
+        vector<bool> matchable(s.size() + 1, false);
+        matchable[s.size()] = true;
+        for (int i = int(s.size()) - 1; i >= 0; --i) {
+            for (const string &word: dict) {
+                if (s.compare(i, word.size(), word) == 0) {
+                    matchable[i] = matchable[i] | matchable[i + word.size()];
                 }
             }
         }
-        vector<string> ans;
-        _gen(s, dicts, f, s.size(), "", ans);
-        return ans;
+        vector<string> result;
+        gen(s, dict, matchable, 0, "", result);
+        return result;
     }
 private:
-    void _gen(const string &s, vector<string> &dicts, vector<bool> &f, int k, string now, vector<string> &ans) {
-        if (k == 0) {
-            ans.push_back(now);
+    void gen(string& s, unordered_set<string>& dict, vector<bool>& matchable,
+             int k, string now, vector<string>& result) {
+        if (k == s.size()) {
+            result.push_back(now);
             return ;
         }
-        if (f[k] == false) return ;
-        for (int i = 0; i < dicts.size(); ++i) {
-            int cutlen = dicts[i].length();
-            if (k >= cutlen && s.substr(k - cutlen, cutlen) == dicts[i]) {
-                _gen(s, dicts, f, k - cutlen, (now == "" ? dicts[i] + now: dicts[i] + " " + now), ans);
+        if (k) now += " ";
+        for (const string &word: dict) {
+            if (s.compare(k, word.size(), word) == 0 && matchable[k + word.size()]) {
+                gen(s, dict, matchable, k + word.size(), now + word, result);
             }
         }
     }

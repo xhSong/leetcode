@@ -9,23 +9,17 @@
 class Solution {
 public:
     void connect(TreeLinkNode *root) {
-        if (root == NULL) return ;
-        TreeLinkNode *head = NULL, *tail = NULL, *p = root;
-        for (; p; p = p->next) {
-            insertLink(head, tail, p->left);
-            insertLink(head, tail, p->right);
-        }
-        connect(head);
+        DFS(root, nullptr);
     }
 private:
-    void insertLink(TreeLinkNode * &head, TreeLinkNode * &tail, TreeLinkNode * node) {
-        if (node != NULL) {
-            if (head == NULL) {
-                head = tail = node;
-            } else {
-                tail->next = node;
-                tail = tail->next;
-            }
+    void DFS(TreeLinkNode *node, TreeLinkNode *next) {
+        if (node) {
+            node->next = next;
+            if (!node->left && !node->right) return ;
+            for (; next && !next->left && !next->right; next = next->next);
+            if (next) next = next->left? next->left: next->right;
+            DFS(node->right, next);
+            DFS(node->left, node->right? node->right: next);
         }
     }
 };

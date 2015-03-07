@@ -10,31 +10,35 @@
 class Solution {
 public:
     int maxPoints(vector<Point> &points) {
-        int ans = min(2, (int)points.size());
-        for (int i = 0; i < points.size(); ++i) {
-            for (int j = i + 1; j < points.size(); ++j) {
-                ans = max(ans, pointsInLine(points, points[i], points[j]));
+        if (points.size() <= 2) return points.size();
+        int result = 0;
+        for (size_t i = 0; i < points.size(); ++i) {
+            vector<Point> diff;
+            int same = 0;
+            for (size_t j = 0; j < points.size(); ++j) {
+                if (points[i].x == points[j].x && points[i].y == points[j].y) {
+                    ++ same;
+                } else {
+                    diff.push_back(Point(points[i].x - points[j].x,
+                                         points[i].y - points[j].y));
+                }
+            }
+            sort(diff.begin(), diff.end(), cmp);
+            result = max(result, same);
+            int counter = 1;
+            for (size_t i = 1; i < diff.size(); ++i) {
+                if (diff[i].x * diff[i - 1].y == diff[i].y * diff[i - 1].x) {
+                    ++ counter;
+                } else {
+                    counter = 1;
+                }
+                result = max(result, counter + same);
             }
         }
-        return ans;
+        return result;
     }
-    
 private:
-    int pointsInLine(const vector<Point> &points, const Point &p1, const Point &p2) {
-        int count = 0;
-        for (int i = 0; i < points.size(); ++i) {
-            if (!equal(p1, p2) && inLine(p1, p2, points[i]) || equal(p1, p2) && equal(points[i], p1)) {
-                ++ count;
-            }
-        }
-        return count;
-    }
-    
-    bool equal(const Point &p1, const Point &p2) {
-        return p1.x == p2.x && p1.y == p2.y;
-    }
-    
-    bool inLine(const Point &p1, const Point &p2, const Point &p3) {
-        return (p2.y - p1.y) * (p3.x - p1.x) == (p2.x - p1.x) * (p3.y - p1.y);
+    static bool cmp(const Point& a, const Point& b) {
+        return a.x * b.y < a.y * b.x;
     }
 };

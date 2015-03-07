@@ -9,18 +9,24 @@
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
-        map<RandomListNode*, RandomListNode*> keyword;
-        keyword[NULL] = NULL;
-        RandomListNode newhead(0), *tail;
-        tail = &newhead;
+        vector<RandomListNode*> nodes;
+        RandomListNode head2(0), *tail2 = &head2;
         for (RandomListNode *p = head; p; p = p->next) {
-            tail->next = new RandomListNode(p->label);
-            tail = tail->next;
-            keyword[p] = tail;
+            nodes.push_back(p);
         }
-        for (RandomListNode *p = head; p; p = p->next) {
-            keyword[p]->random = keyword[p->random];
+        for (RandomListNode* node: nodes) {
+            tail2->next = new RandomListNode(node->label);
+            tail2 = tail2->next;
+            node->next = tail2;
+            tail2->random = node->random;
         }
-        return newhead.next;
+        for (RandomListNode *p = head2.next; p; p = p->next) {
+            if (p->random) p->random = p->random->next;
+        }
+        for (int i = 0; i < int(nodes.size()) - 1; ++i) {
+            nodes[i]->next = nodes[i + 1];
+        }
+        if (nodes.size()) nodes[nodes.size() - 1]->next = nullptr;
+        return head2.next;
     }
 };

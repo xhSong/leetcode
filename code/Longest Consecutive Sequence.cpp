@@ -1,18 +1,29 @@
 class Solution {
 public:
     int longestConsecutive(vector<int> &num) {
-        if (num.size() == 0) return 0;
-        sort(num.begin(), num.end());
-        num.resize(unique(num.begin(), num.end()) - num.begin());
-        int res = 1, cnt = 1;
-        for (int i = 1; i < num.size(); ++i) {
-            if (num[i] == num[i - 1] + 1) {
-                ++ cnt;
-            } else {
-                cnt = 1;
-            }
-            res = max(res, cnt);
+        unordered_map<int, int> hashtable;
+        vector<pair<int, int>> linked(num.size(), pair<int, int>(-1, -1));
+        for (int i = 0; i < num.size(); ++i) {
+            hashtable[num[i]] = int(i);
         }
-        return res;        
+        for (int i = 0; i < num.size(); ++i) {
+            if (hashtable.find(num[i] - 1) != hashtable.end()) {
+                linked[i].first = hashtable[num[i] - 1];
+            }
+            if (hashtable.find(num[i] + 1) != hashtable.end()) {
+                linked[i].second = hashtable[num[i] + 1];
+            }
+        }
+        int result = 0;
+        for (int i = 0; i < num.size(); ++i) {
+            if (linked[i].first == -1) {
+                int counter = 0;
+                for (int pos = i; pos != -1; pos = linked[pos].second) {
+                    ++ counter;
+                }
+                result = max(result, counter);
+            }
+        }
+        return result;
     }
 };

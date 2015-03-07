@@ -10,52 +10,28 @@
 class Solution {
 public:
     void recoverTree(TreeNode *root) {
-        if (root == NULL) return ;
-        TreeNode *mistakeroot, *minp, *maxp, *lminp, *lmaxp, *rminp, *rmaxp;
-        mistakeroot = _mistake(root, minp, maxp);
-        
-        _mistake(mistakeroot->left, lminp, lmaxp);
-        _mistake(mistakeroot->right, rminp, rmaxp);
-        
-        if ((lmaxp && lmaxp->val > mistakeroot->val) && (rminp && rminp->val < mistakeroot->val)) {
-            _swap(lmaxp, rminp);
-            return ;
-        }
-        if (lmaxp && lmaxp->val > mistakeroot->val) {
-            _swap(lmaxp, mistakeroot);
-        }
-        if (rminp && rminp->val < mistakeroot->val) {
-            _swap(rminp, mistakeroot);
+        pre = first = first_next = second = nullptr;
+        DFS(root);
+        if (first && second) {
+            swap(first->val, second->val);
+        } else {
+            swap(first->val, first_next->val);
         }
     }
 private:
-    void _swap(TreeNode *p, TreeNode *q) {
-        int temp = p->val;
-        p->val = q->val;
-        q->val = temp;
-    }
-    
-    TreeNode* _mistake(TreeNode *root, TreeNode *&minp, TreeNode *&maxp) {
-        if (root == NULL) {
-            minp = maxp = NULL;
-            return NULL;
+    void DFS(TreeNode* root) {
+        if (root) {
+            DFS(root->left);
+            if (pre && pre->val > root->val) {
+                if (first) second = root;
+                else {
+                    first = pre;
+                    first_next = root;
+                }
+            }
+            pre = root;
+            DFS(root->right);
         }
-    
-        TreeNode *lminp, *rminp, *lmaxp, *rmaxp, *lmistake, *rmistake;
-        
-        lmistake = _mistake(root->left, lminp, lmaxp);
-        rmistake = _mistake(root->right, rminp, rmaxp);
-        
-        minp = maxp = root;
-        if (lminp && lminp->val < minp->val) minp = lminp;
-        if (rminp && rminp->val < minp->val) minp = rminp;
-        if (lmaxp && lmaxp->val > maxp->val) maxp = lmaxp;
-        if (rmaxp && rmaxp->val > maxp->val) maxp = rmaxp;
-        
-        
-        if ((lmaxp && lmaxp->val > root->val) || (rminp && rminp->val < root->val)) return root;
-        if (lmistake) return lmistake;
-        if (rmistake) return rmistake;
-        return NULL;
     }
+    TreeNode *first, *second, *pre, *first_next;
 };

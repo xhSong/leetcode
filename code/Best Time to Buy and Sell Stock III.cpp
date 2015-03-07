@@ -3,7 +3,7 @@ public:
     int maxProfit(vector<int> &prices) {
         int n = prices.size();
         if (n <= 1) return 0;
-        vector<vector<int> > f(n + 1, vector<int>(5, 0));
+        int f[n + 1][5] = {0};
         f[0][1] = f[0][3] = -prices[0];
         for (int i = 1; i <= prices.size(); ++i) {
             f[i][0] = f[i - 1][0];
